@@ -19,21 +19,24 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 include(CPM)
 
 cpmaddpackage(URI "gh:commschamp/commsdsl@8.0.1" OPTIONS "COMMSDSL_BUILD_COMMSDSL2COMMS ON" "COMMSDSL_BUILD_UNIT_TESTS OFF" "BUILD_TESTING OFF")
+
+set(GENERATED_DIR "${CMAKE_CURRENT_SOURCE_DIR}/generated")
 add_custom_command(
-    OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/generated/CMakeLists.txt
+    OUTPUT "${GENERATED_DIR}/CMakeLists.txt"
     BYPRODUCTS
-        ${CMAKE_CURRENT_SOURCE_DIR}/generated/include/proto/Version.h
-        ${CMAKE_CURRENT_SOURCE_DIR}/generated/include/proto/MsgId.h
-        ${CMAKE_CURRENT_SOURCE_DIR}/protocol/include/proto/FrameInterface.h
+        "${GENERATED_DIR}/include/proto/Version.h"
+        "${GENERATED_DIR}/include/proto/MsgId.h"
+        "${GENERATED_DIR}/include/proto/FrameInterface.h"
+    COMMAND "${CMAKE_COMMAND}" -E rm -rf "${GENERATED_DIR}"
     COMMAND
-        $<TARGET_FILE:commsdsl2comms> -o ${CMAKE_CURRENT_SOURCE_DIR}/generated
-        ${CMAKE_CURRENT_SOURCE_DIR}/schema.xml
-    DEPENDS commsdsl2comms ${CMAKE_CURRENT_SOURCE_DIR}/schema.xml
+        $<TARGET_FILE:commsdsl2comms> -o "${GENERATED_DIR}"
+        "${CMAKE_CURRENT_SOURCE_DIR}/schema.xml"
+    DEPENDS commsdsl2comms "${CMAKE_CURRENT_SOURCE_DIR}/schema.xml"
     VERBATIM
 )
 
 add_custom_target(
     generate_commsdsl2comms
     ALL
-    DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/generated/CMakeLists.txt
+    DEPENDS "${GENERATED_DIR}/CMakeLists.txt"
 )
