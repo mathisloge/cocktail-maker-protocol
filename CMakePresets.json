@@ -1,0 +1,105 @@
+{
+    "version": 10,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 31,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "common",
+            "hidden": true,
+            "binaryDir": "${sourceDir}/build",
+            "generator": "Ninja",
+            "installDir": "${sourceDir}/dist",
+            "cacheVariables": {
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            }
+        },
+        {
+            "name": "debug-build",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "release-build",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+            }
+        },
+        {
+            "name": "developer",
+            "displayName": "Developer",
+            "inherits": [
+                "common",
+                "debug-build"
+            ],
+            "cacheVariables": {
+            }
+        },
+        {
+            "name": "production",
+            "displayName": "Production build",
+            "inherits": [
+                "common",
+                "release-build"
+            ],
+            "cacheVariables": {
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "developer",
+            "configurePreset": "developer"
+        },
+        {
+            "name": "production",
+            "configurePreset": "production"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "developer",
+            "configurePreset": "developer",
+            "output": {
+                "outputOnFailure": true
+            },
+            "execution": {
+                "noTestsAction": "ignore",
+                "stopOnFailure": true
+            }
+        }
+    ],
+    "packagePresets": [
+        {
+            "name": "production",
+            "configurePreset": "production",
+            "generators": [
+                "DEB"
+            ]
+        }
+    ],
+    "workflowPresets": [
+        {
+            "name": "production",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "production"
+                },
+                {
+                    "type": "build",
+                    "name": "production"
+                },
+                {
+                    "type": "package",
+                    "name": "production"
+                }
+            ]
+        }
+    ]
+}

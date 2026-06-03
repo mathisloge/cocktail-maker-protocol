@@ -1,0 +1,26 @@
+/// @namespace proto
+/// @brief Protocol specific namespace.
+
+/// @namespace proto::message
+/// @brief Namespace for all the messages in proto namespace.
+
+/// @namespace proto::field
+/// @brief Namespace for all the stand alone fields defined in proto namespace.
+
+/// @namespace proto::frame
+/// @brief Namespace for all the frames defined in proto namespace.
+
+/// @namespace proto::frame::layer
+/// @brief Namespace for the custom frame layers defined in proto namespace.
+
+/// @namespace proto::frame::checksum
+/// @brief Namespace for the custom frame layers defined in proto namespace.
+
+/// @namespace proto::options
+/// @brief Main namespace for the various protocol options.
+
+/// @namespace proto::input
+/// @brief Main namespace for hold input messages bundles.
+
+/// @namespace proto::dispatch
+/// @brief Main namespace for the various message dispatch functions.
