@@ -30,7 +30,8 @@ struct EmergencyStopFields
 
 /// @brief Definition of <b>"Emergency Stop"</b> message class.
 /// @details
-/// Requests to bring the machine in a safe state. @n
+/// Requests the client to bring the machine into a safe state.
+/// The client must respond with an Ack. @n
 ///     See @ref EmergencyStopFields for definition of the fields this message contains.
 /// @tparam TMsgBase Base (interface) class.
 /// @tparam TOpt Extra options

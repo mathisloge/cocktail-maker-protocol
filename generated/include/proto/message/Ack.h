@@ -30,8 +30,9 @@ struct AckFields
 
 /// @brief Definition of <b>"Ack"</b> message class.
 /// @details
-/// General Ack message for a command. Command to be acked is
-/// tracked with the transactionId in the frame. @n
+/// General acknowledgment message for a command. The command
+/// being acknowledged is identified via the frame's
+/// TransactionId. @n
 ///     See @ref AckFields for definition of the fields this message contains.
 /// @tparam TMsgBase Base (interface) class.
 /// @tparam TOpt Extra options

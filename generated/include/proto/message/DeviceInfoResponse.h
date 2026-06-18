@@ -288,7 +288,8 @@ struct DeviceInfoResponseFields
 
 /// @brief Definition of <b>"Device Info Response"</b> message class.
 /// @details
-/// Response for each DeviceInfoRequest. @n
+/// Response to a DeviceInfoRequest, containing the device
+/// information. @n
 ///     See @ref DeviceInfoResponseFields for definition of the fields this message contains.
 /// @tparam TMsgBase Base (interface) class.
 /// @tparam TOpt Extra options

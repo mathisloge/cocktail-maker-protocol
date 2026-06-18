@@ -29,7 +29,7 @@ struct LoadCellSetRefWeightFields
 {
     /// @brief Definition of <b>"DispenserId"</b> field.
     /// @details
-    ///     The dispenser where the load cell is referenced to.
+    ///     The dispenser whose load cell this command applies to.
     struct DispenserId: public
         proto::field::DispenserId<
             TOpt,
@@ -40,7 +40,7 @@ struct LoadCellSetRefWeightFields
 
     /// @brief Definition of <b>"Gram"</b> field.
     /// @details
-    ///     The reference weight currently applied.
+    ///     The reference weight which is currently applied.
     struct Gram: public
         proto::field::Gram<
             TOpt,
@@ -58,8 +58,8 @@ struct LoadCellSetRefWeightFields
 
 /// @brief Definition of <b>"LoadCell Set Reference Weight"</b> message class.
 /// @details
-/// Sets the current measurement of a specific load cell to the
-/// given reference weight. Client should respond with an Ack. @n
+/// Sets a specific load cell's current measurement to the given
+/// reference weight. The client must respond with an Ack. @n
 ///     See @ref LoadCellSetRefWeightFields for definition of the fields this message contains.
 /// @tparam TMsgBase Base (interface) class.
 /// @tparam TOpt Extra options

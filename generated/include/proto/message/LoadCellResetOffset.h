@@ -28,7 +28,7 @@ struct LoadCellResetOffsetFields
 {
     /// @brief Definition of <b>"DispenserId"</b> field.
     /// @details
-    ///     The dispenser where the load cell is referenced to.
+    ///     The dispenser whose load cell this command applies to.
     struct DispenserId: public
         proto::field::DispenserId<
             TOpt,
@@ -45,8 +45,8 @@ struct LoadCellResetOffsetFields
 
 /// @brief Definition of <b>"LoadCell Reset Offset"</b> message class.
 /// @details
-/// Requests to reset a specific load cell to the current measured
-/// value. Client should respond with an Ack. @n
+/// Requests a specific load cell to be reset to its current
+/// measured value. The client must respond with an Ack. @n
 ///     See @ref LoadCellResetOffsetFields for definition of the fields this message contains.
 /// @tparam TMsgBase Base (interface) class.
 /// @tparam TOpt Extra options

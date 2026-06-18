@@ -1,9 +1,10 @@
 /// @mainpage Cocktail Maker Serial Protocol
 /// @tableofcontents
-/// Protocol used for serial communication between the cocktail-maker-app
-/// and the embedded controllers. Definition of the sender property:
-/// sender=server: raspberry-pi (cocktail-maker-app) sender=client:
-/// embedded controller (cocktail-maker-embedded)
+/// Protocol used for serial communication between the Station
+/// and the Pods. Definition of the sender property: sender=server:
+/// Station sender=client: Pod Every server-initiated message is
+/// answered by the client with either a dedicated response message
+/// or a generic Ack, correlated via the frame's TransactionId.
 /// Below is a short summary of generated classes.
 /// Please refer to <b>"How to Use Defined Custom Protocol"</b> page of its documentation
 /// for detailed explanation on how to use them.

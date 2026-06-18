@@ -30,7 +30,7 @@ struct DeviceInfoRequestFields
 
 /// @brief Definition of <b>"Device Info Request"</b> message class.
 /// @details
-/// Requests the device info. @n
+/// Requests the device information. @n
 ///     See @ref DeviceInfoRequestFields for definition of the fields this message contains.
 /// @tparam TMsgBase Base (interface) class.
 /// @tparam TOpt Extra options

@@ -2,11 +2,14 @@
 <schema name="proto" displayName="Cocktail Maker Serial Protocol" endian="little" version="0x010000"
     dslVersion="8">
     <description>
-        Protocol used for serial communication between the cocktail-maker-app and the embedded
-        controllers.
+        Protocol used for serial communication between the Station and the Pods.
+
         Definition of the sender property:
-        sender=server: raspberry-pi (cocktail-maker-app)
-        sender=client: embedded controller (cocktail-maker-embedded)
+        sender=server: Station
+        sender=client: Pod
+
+        Every server-initiated message is answered by the client with either a dedicated
+        response message or a generic Ack, correlated via the frame's TransactionId.
     </description>
 
     <fields>
@@ -46,31 +49,31 @@
     <!-- General messages -->
     <message name="Ping" id="MsgId.Ping" sender="server" displayName="^MsgPingName">
         <description>
-            Initiating keep alive message.
+            Keep-alive message initiated by the server.
         </description>
     </message>
     <message name="Pong" id="MsgId.Pong" sender="client" displayName="^MsgPongName">
         <description>
-            Responding keep alive message.
+            Keep-alive response sent by the client.
         </description>
     </message>
     <message name="Ack" id="MsgId.Ack" sender="client" displayName="^MsgAckName">
         <description>
-            General Ack message for a command.
-            Command to be acked is tracked with the transactionId in the frame.
+            General acknowledgment message for a command.
+            The command being acknowledged is identified via the frame's TransactionId.
         </description>
     </message>
 
     <message name="DeviceInfoRequest" id="MsgId.DeviceInfoRequest" sender="server"
         displayName="^MsgDeviceInfoRequestName">
         <description>
-            Requests the device info.
+            Requests the device information.
         </description>
     </message>
     <message name="DeviceInfoResponse" id="MsgId.DeviceInfoResponse" sender="client"
         displayName="^MsgDeviceInfoResponseName">
         <description>
-            Response for each DeviceInfoRequest.
+            Response to a DeviceInfoRequest, containing the device information.
         </description>
         <fields>
             <int name="HardwareRevision" type="uint8" />
@@ -90,7 +93,8 @@
     <message name="EmergencyStop" id="MsgId.EmergencyStop" sender="server"
         displayName="^MsgEmergencyStopName">
         <description>
-            Requests to bring the machine in a safe state.
+            Requests the client to bring the machine into a safe state.
+            The client must respond with an Ack.
         </description>
     </message>
 
@@ -98,24 +102,24 @@
     <message name="LoadCellResetOffset" id="MsgId.LoadCellResetOffset" sender="server"
         displayName="^MsgLoadCellResetOffsetName">
         <description>
-            Requests to reset a specific load cell to the current measured value.
-            Client should respond with an Ack.
+            Requests a specific load cell to be reset to its current measured value.
+            The client must respond with an Ack.
         </description>
         <fields>
             <ref field="DispenserId"
-                description="The dispenser where the load cell is referenced to." />
+                description="The dispenser whose load cell this command applies to." />
         </fields>
     </message>
     <message name="LoadCellSetRefWeight" id="MsgId.LoadCellSetRefWeight" sender="server"
         displayName="^MsgLoadCellSetRefWeightName">
         <description>
-            Sets the current measurement of a specific load cell to the given reference weight.
-            Client should respond with an Ack.
+            Sets a specific load cell's current measurement to the given reference weight.
+            The client must respond with an Ack.
         </description>
         <fields>
             <ref field="DispenserId"
-                description="The dispenser where the load cell is referenced to." />
-            <ref field="Gram" description="The reference weight currently applied." />
+                description="The dispenser whose load cell this command applies to." />
+            <ref field="Gram" description="The reference weight which is currently applied." />
         </fields>
     </message>
 

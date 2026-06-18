@@ -30,7 +30,7 @@ struct PingFields
 
 /// @brief Definition of <b>"Ping Server Message"</b> message class.
 /// @details
-/// Initiating keep alive message. @n
+/// Keep-alive message initiated by the server. @n
 ///     See @ref PingFields for definition of the fields this message contains.
 /// @tparam TMsgBase Base (interface) class.
 /// @tparam TOpt Extra options
