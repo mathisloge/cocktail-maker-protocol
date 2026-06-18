@@ -70,7 +70,9 @@ struct MsgIdCommon
             std::make_pair(proto::MsgId_Ack, "Ack"),
             std::make_pair(proto::MsgId_DeviceInfoRequest, "Device Info Request"),
             std::make_pair(proto::MsgId_DeviceInfoResponse, "Device Info Response"),
-            std::make_pair(proto::MsgId_EmergencyStop, "Emergency Stop")
+            std::make_pair(proto::MsgId_EmergencyStop, "Emergency Stop"),
+            std::make_pair(proto::MsgId_LoadCellResetOffset, "LoadCell Reset Offset"),
+            std::make_pair(proto::MsgId_LoadCellSetRefWeight, "LoadCell Set Reference Weight")
         };
         static const std::size_t MapSize = std::extent<decltype(Map)>::value;
 

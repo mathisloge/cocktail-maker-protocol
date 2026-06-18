@@ -30,7 +30,7 @@ struct PongFields
 
 /// @brief Definition of <b>"Pong Client Message"</b> message class.
 /// @details
-/// Responding test message. @n
+/// Responding keep alive message. @n
 ///     See @ref PongFields for definition of the fields this message contains.
 /// @tparam TMsgBase Base (interface) class.
 /// @tparam TOpt Extra options

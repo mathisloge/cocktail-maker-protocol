@@ -10,6 +10,8 @@
 #include "proto/message/DeviceInfoRequest.h"
 #include "proto/message/DeviceInfoResponse.h"
 #include "proto/message/EmergencyStop.h"
+#include "proto/message/LoadCellResetOffset.h"
+#include "proto/message/LoadCellSetRefWeight.h"
 #include "proto/message/Ping.h"
 #include "proto/message/Pong.h"
 #include "proto/options/DefaultOptions.h"
@@ -31,7 +33,9 @@ using AllMessages =
         proto::message::Ack<TBase, TOpt>,
         proto::message::DeviceInfoRequest<TBase, TOpt>,
         proto::message::DeviceInfoResponse<TBase, TOpt>,
-        proto::message::EmergencyStop<TBase, TOpt>
+        proto::message::EmergencyStop<TBase, TOpt>,
+        proto::message::LoadCellResetOffset<TBase, TOpt>,
+        proto::message::LoadCellSetRefWeight<TBase, TOpt>
     >;
 
 } // namespace input
@@ -49,7 +53,9 @@ using AllMessages =
     using prefix_ ## Ack ## suffix_ = proto::message::Ack<interface_, opts_>; \
     using prefix_ ## DeviceInfoRequest ## suffix_ = proto::message::DeviceInfoRequest<interface_, opts_>; \
     using prefix_ ## DeviceInfoResponse ## suffix_ = proto::message::DeviceInfoResponse<interface_, opts_>; \
-    using prefix_ ## EmergencyStop ## suffix_ = proto::message::EmergencyStop<interface_, opts_>;
+    using prefix_ ## EmergencyStop ## suffix_ = proto::message::EmergencyStop<interface_, opts_>; \
+    using prefix_ ## LoadCellResetOffset ## suffix_ = proto::message::LoadCellResetOffset<interface_, opts_>; \
+    using prefix_ ## LoadCellSetRefWeight ## suffix_ = proto::message::LoadCellSetRefWeight<interface_, opts_>;
 
 /// @brief Create type aliases for the all messages of the protocol using default options.
 /// @param prefix_ Prefix of the alias message type.

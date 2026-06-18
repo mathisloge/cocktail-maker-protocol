@@ -20,11 +20,13 @@ enum MsgId : std::uint16_t
     MsgId_DeviceInfoRequest = 16, ///< message id of <b>Device Info Request</b> message.
     MsgId_DeviceInfoResponse = 17, ///< message id of <b>Device Info Response</b> message.
     MsgId_EmergencyStop = 18, ///< message id of <b>Emergency Stop</b> message.
+    MsgId_LoadCellResetOffset = 32, ///< message id of <b>LoadCell Reset Offset</b> message.
+    MsgId_LoadCellSetRefWeight = 33, ///< message id of <b>LoadCell Set Reference Weight</b> message.
 
     // --- Extra values generated for convenience ---
     MsgId_FirstValue = 1, ///< First defined value.
-    MsgId_LastValue = 18, ///< Last defined value.
-    MsgId_ValuesLimit = 19, ///< Upper limit for defined values.
+    MsgId_LastValue = 33, ///< Last defined value.
+    MsgId_ValuesLimit = 34, ///< Upper limit for defined values.
 };
 
 } // namespace proto

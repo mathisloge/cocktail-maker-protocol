@@ -59,6 +59,26 @@ struct ServerDefaultOptionsT : public TBase
             >;
 
         /// @brief Extra options for @ref
+        ///     proto::message::LoadCellResetOffset
+        ///     message.
+        using LoadCellResetOffset =
+            std::tuple<
+                comms::option::app::NoReadImpl,
+                comms::option::app::NoDispatchImpl,
+                typename TBase::message::LoadCellResetOffset
+            >;
+
+        /// @brief Extra options for @ref
+        ///     proto::message::LoadCellSetRefWeight
+        ///     message.
+        using LoadCellSetRefWeight =
+            std::tuple<
+                comms::option::app::NoReadImpl,
+                comms::option::app::NoDispatchImpl,
+                typename TBase::message::LoadCellSetRefWeight
+            >;
+
+        /// @brief Extra options for @ref
         ///     proto::message::Ping message.
         using Ping =
             std::tuple<

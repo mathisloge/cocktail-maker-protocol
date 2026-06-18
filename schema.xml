@@ -10,41 +10,54 @@
     </description>
 
     <fields>
+        <!-- General messages -->
         <string name="MsgPingName" defaultValue="Ping Server Message" />
         <string name="MsgPongName" defaultValue="Pong Client Message" />
+        <string name="MsgAckName" defaultValue="Ack" />
         <string name="MsgDeviceInfoRequestName" defaultValue="Device Info Request" />
         <string name="MsgDeviceInfoResponseName" defaultValue="Device Info Response" />
         <string name="MsgEmergencyStopName" defaultValue="Emergency Stop" />
-        <string name="MsgAckName" defaultValue="Ack" />
+        <!-- Load cell related messages -->
+        <string name="MsgLoadCellResetOffsetName" defaultValue="LoadCell Reset Offset" />
+        <string name="MsgLoadCellSetRefWeightName" defaultValue="LoadCell Set Reference Weight" />
+
         <enum name="MsgId" type="uint16" semanticType="messageId">
+            <!-- General messages -->
             <validValue name="Ping" val="0x001" displayName="^MsgPingName" />
             <validValue name="Pong" val="0x002" displayName="^MsgPongName" />
             <validValue name="Ack" val="0x003" displayName="^MsgAckName" />
-
-            <!-- System wide messages -->
             <validValue name="DeviceInfoRequest" val="0x010" displayName="^MsgDeviceInfoRequestName" />
             <validValue name="DeviceInfoResponse" val="0x011"
                 displayName="^MsgDeviceInfoResponseName" />
             <validValue name="EmergencyStop" val="0x012" displayName="^MsgEmergencyStopName" />
+
+            <!-- Load cell related messages -->
+            <validValue name="LoadCellResetOffset" val="0x020"
+                displayName="^MsgLoadCellResetOffsetName" />
+            <validValue name="LoadCellSetRefWeight" val="0x021"
+                displayName="^MsgLoadCellSetRefWeightName" />
         </enum>
 
-        <int name="MotorId" type="uint8" />
+        <int name="DispenserId" type="uint8" />
+        <int name="Millilitre" type="int16" />
+        <int name="Gram" type="int16" />
     </fields>
 
+    <!-- General messages -->
     <message name="Ping" id="MsgId.Ping" sender="server" displayName="^MsgPingName">
         <description>
-            Initiating test message.
+            Initiating keep alive message.
         </description>
     </message>
     <message name="Pong" id="MsgId.Pong" sender="client" displayName="^MsgPongName">
         <description>
-            Responding test message.
+            Responding keep alive message.
         </description>
     </message>
     <message name="Ack" id="MsgId.Ack" sender="client" displayName="^MsgAckName">
         <description>
-            General Ack message for a command. Command to be acked is tracked with the transactionId
-            in the frame.
+            General Ack message for a command.
+            Command to be acked is tracked with the transactionId in the frame.
         </description>
     </message>
 
@@ -80,6 +93,32 @@
             Requests to bring the machine in a safe state.
         </description>
     </message>
+
+    <!-- Load cell related messages -->
+    <message name="LoadCellResetOffset" id="MsgId.LoadCellResetOffset" sender="server"
+        displayName="^MsgLoadCellResetOffsetName">
+        <description>
+            Requests to reset a specific load cell to the current measured value.
+            Client should respond with an Ack.
+        </description>
+        <fields>
+            <ref field="DispenserId"
+                description="The dispenser where the load cell is referenced to." />
+        </fields>
+    </message>
+    <message name="LoadCellSetRefWeight" id="MsgId.LoadCellSetRefWeight" sender="server"
+        displayName="^MsgLoadCellSetRefWeightName">
+        <description>
+            Sets the current measurement of a specific load cell to the given reference weight.
+            Client should respond with an Ack.
+        </description>
+        <fields>
+            <ref field="DispenserId"
+                description="The dispenser where the load cell is referenced to." />
+            <ref field="Gram" description="The reference weight currently applied." />
+        </fields>
+    </message>
+
 
     <interface name="FrameInterface">
         <int name="TransactionId" type="uint8" />

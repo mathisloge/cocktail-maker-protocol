@@ -52,6 +52,16 @@ struct DefaultOptionsT : public TBase
         using EmergencyStop = comms::option::app::EmptyOption;
 
         /// @brief Extra options for @ref
+        ///     proto::message::LoadCellResetOffset
+        ///     message.
+        using LoadCellResetOffset = comms::option::app::EmptyOption;
+
+        /// @brief Extra options for @ref
+        ///     proto::message::LoadCellSetRefWeight
+        ///     message.
+        using LoadCellSetRefWeight = comms::option::app::EmptyOption;
+
+        /// @brief Extra options for @ref
         ///     proto::message::Ping message.
         using Ping = comms::option::app::EmptyOption;
 

@@ -68,6 +68,8 @@ public:
             case 1 /* 0x1 */: return MsgPtr(new proto::message::Ping<TInterface, TProtOptions>);
             case 16 /* 0x10 */: return MsgPtr(new proto::message::DeviceInfoRequest<TInterface, TProtOptions>);
             case 18 /* 0x12 */: return MsgPtr(new proto::message::EmergencyStop<TInterface, TProtOptions>);
+            case 32 /* 0x20 */: return MsgPtr(new proto::message::LoadCellResetOffset<TInterface, TProtOptions>);
+            case 33 /* 0x21 */: return MsgPtr(new proto::message::LoadCellSetRefWeight<TInterface, TProtOptions>);
             default: break;
         }
 
@@ -99,6 +101,8 @@ public:
             case 1 /* 0x1 */: return 1;
             case 16 /* 0x10 */: return 1;
             case 18 /* 0x12 */: return 1;
+            case 32 /* 0x20 */: return 1;
+            case 33 /* 0x21 */: return 1;
             default: break;
         }
 

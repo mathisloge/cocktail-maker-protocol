@@ -8,6 +8,8 @@
 #include <tuple>
 #include "proto/message/DeviceInfoRequest.h"
 #include "proto/message/EmergencyStop.h"
+#include "proto/message/LoadCellResetOffset.h"
+#include "proto/message/LoadCellSetRefWeight.h"
 #include "proto/message/Ping.h"
 #include "proto/options/DefaultOptions.h"
 
@@ -25,7 +27,9 @@ using ClientInputMessages =
     std::tuple<
         proto::message::Ping<TBase, TOpt>,
         proto::message::DeviceInfoRequest<TBase, TOpt>,
-        proto::message::EmergencyStop<TBase, TOpt>
+        proto::message::EmergencyStop<TBase, TOpt>,
+        proto::message::LoadCellResetOffset<TBase, TOpt>,
+        proto::message::LoadCellSetRefWeight<TBase, TOpt>
     >;
 
 } // namespace input
@@ -40,7 +44,9 @@ using ClientInputMessages =
 #define PROTO_ALIASES_FOR_CLIENT_INPUT_MESSAGES(prefix_, suffix_, interface_, opts_) \
     using prefix_ ## Ping ## suffix_ = proto::message::Ping<interface_, opts_>; \
     using prefix_ ## DeviceInfoRequest ## suffix_ = proto::message::DeviceInfoRequest<interface_, opts_>; \
-    using prefix_ ## EmergencyStop ## suffix_ = proto::message::EmergencyStop<interface_, opts_>;
+    using prefix_ ## EmergencyStop ## suffix_ = proto::message::EmergencyStop<interface_, opts_>; \
+    using prefix_ ## LoadCellResetOffset ## suffix_ = proto::message::LoadCellResetOffset<interface_, opts_>; \
+    using prefix_ ## LoadCellSetRefWeight ## suffix_ = proto::message::LoadCellSetRefWeight<interface_, opts_>;
 
 /// @brief Create type aliases for the client input messages of the protocol using default options.
 /// @param prefix_ Prefix of the alias message type.

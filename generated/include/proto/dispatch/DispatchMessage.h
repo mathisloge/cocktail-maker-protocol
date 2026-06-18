@@ -77,6 +77,16 @@ auto dispatchMessage(
         using MsgType = proto::message::EmergencyStop<InterfaceType, TProtOptions>;
         return handler.handle(static_cast<MsgType&>(msg));
     }
+    case 32 /* 0x20 */:
+    {
+        using MsgType = proto::message::LoadCellResetOffset<InterfaceType, TProtOptions>;
+        return handler.handle(static_cast<MsgType&>(msg));
+    }
+    case 33 /* 0x21 */:
+    {
+        using MsgType = proto::message::LoadCellSetRefWeight<InterfaceType, TProtOptions>;
+        return handler.handle(static_cast<MsgType&>(msg));
+    }
     default:
         break;
     };

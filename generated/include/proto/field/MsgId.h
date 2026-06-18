@@ -29,7 +29,8 @@ class MsgId : public
         TExtraOpts...,
         comms::option::def::HasName,
         comms::option::def::ValidNumValueRange<1, 3>,
-        comms::option::def::ValidNumValueRange<16, 18>
+        comms::option::def::ValidNumValueRange<16, 18>,
+        comms::option::def::ValidNumValueRange<32, 33>
     >
 {
     using Base =
@@ -39,7 +40,8 @@ class MsgId : public
             TExtraOpts...,
             comms::option::def::HasName,
             comms::option::def::ValidNumValueRange<1, 3>,
-            comms::option::def::ValidNumValueRange<16, 18>
+            comms::option::def::ValidNumValueRange<16, 18>,
+            comms::option::def::ValidNumValueRange<32, 33>
         >;
 public:
     /// @brief Re-definition of the value type.
