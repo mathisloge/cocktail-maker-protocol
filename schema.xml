@@ -17,6 +17,7 @@
         <string name="MsgPingName" defaultValue="Ping Server Message" />
         <string name="MsgPongName" defaultValue="Pong Client Message" />
         <string name="MsgAckName" defaultValue="Ack" />
+        <string name="MsgNakName" defaultValue="Nak" />
         <string name="MsgDeviceInfoRequestName" defaultValue="Device Info Request" />
         <string name="MsgDeviceInfoResponseName" defaultValue="Device Info Response" />
         <string name="MsgEmergencyStopName" defaultValue="Emergency Stop" />
@@ -29,6 +30,7 @@
             <validValue name="Ping" val="0x001" displayName="^MsgPingName" />
             <validValue name="Pong" val="0x002" displayName="^MsgPongName" />
             <validValue name="Ack" val="0x003" displayName="^MsgAckName" />
+            <validValue name="Nak" val="0x004" displayName="^MsgNakName" />
             <validValue name="DeviceInfoRequest" val="0x010" displayName="^MsgDeviceInfoRequestName" />
             <validValue name="DeviceInfoResponse" val="0x011"
                 displayName="^MsgDeviceInfoResponseName" />
@@ -41,6 +43,16 @@
                 displayName="^MsgLoadCellSetRefWeightName" />
         </enum>
 
+        <enum name="ErrorCode" type="uint8">
+            <validValue name="InvalidParameter" val="0" displayName="Invalid Parameter" />
+            <validValue name="DispenserNotFound" val="1" displayName="Dispenser Not Found" />
+            <validValue name="UnsupportedInCurrentState" val="2"
+                displayName="Unsupported In Current State" />
+            <validValue name="HardwareFault" val="3" displayName="Hardware Fault" />
+            <validValue name="Busy" val="4" displayName="Busy" />
+            <validValue name="NotCalibrated" val="5" displayName="Not Calibrated" />
+            <validValue name="InternalError" val="6" displayName="Internal Error" />
+        </enum>
         <int name="DispenserId" type="uint8" />
         <int name="Millilitre" type="int16" />
         <int name="Gram" type="int16" />
@@ -62,6 +74,15 @@
             General acknowledgment message for a command.
             The command being acknowledged is identified via the frame's TransactionId.
         </description>
+    </message>
+    <message name="Nak" id="MsgId.Nak" sender="client" displayName="^MsgNakName">
+        <description>
+            General negative-acknowledgment message for a command.
+            The command being acknowledged is identified via the frame's TransactionId.
+        </description>
+        <fields>
+            <ref field="ErrorCode" description="Reason the command could not be executed." />
+        </fields>
     </message>
 
     <message name="DeviceInfoRequest" id="MsgId.DeviceInfoRequest" sender="server"
