@@ -8,6 +8,7 @@
 #include <tuple>
 #include "proto/message/Ack.h"
 #include "proto/message/DeviceInfoResponse.h"
+#include "proto/message/Nak.h"
 #include "proto/message/Pong.h"
 #include "proto/options/DefaultOptions.h"
 
@@ -25,6 +26,7 @@ using ServerInputMessages =
     std::tuple<
         proto::message::Pong<TBase, TOpt>,
         proto::message::Ack<TBase, TOpt>,
+        proto::message::Nak<TBase, TOpt>,
         proto::message::DeviceInfoResponse<TBase, TOpt>
     >;
 
@@ -40,6 +42,7 @@ using ServerInputMessages =
 #define PROTO_ALIASES_FOR_SERVER_INPUT_MESSAGES(prefix_, suffix_, interface_, opts_) \
     using prefix_ ## Pong ## suffix_ = proto::message::Pong<interface_, opts_>; \
     using prefix_ ## Ack ## suffix_ = proto::message::Ack<interface_, opts_>; \
+    using prefix_ ## Nak ## suffix_ = proto::message::Nak<interface_, opts_>; \
     using prefix_ ## DeviceInfoResponse ## suffix_ = proto::message::DeviceInfoResponse<interface_, opts_>;
 
 /// @brief Create type aliases for the server input messages of the protocol using default options.

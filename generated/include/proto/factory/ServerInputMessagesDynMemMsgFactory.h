@@ -67,6 +67,7 @@ public:
         switch (static_cast<std::intmax_t>(id)) {
             case 2 /* 0x2 */: return MsgPtr(new proto::message::Pong<TInterface, TProtOptions>);
             case 3 /* 0x3 */: return MsgPtr(new proto::message::Ack<TInterface, TProtOptions>);
+            case 4 /* 0x4 */: return MsgPtr(new proto::message::Nak<TInterface, TProtOptions>);
             case 17 /* 0x11 */: return MsgPtr(new proto::message::DeviceInfoResponse<TInterface, TProtOptions>);
             default: break;
         }
@@ -98,6 +99,7 @@ public:
         {
             case 2 /* 0x2 */: return 1;
             case 3 /* 0x3 */: return 1;
+            case 4 /* 0x4 */: return 1;
             case 17 /* 0x11 */: return 1;
             default: break;
         }

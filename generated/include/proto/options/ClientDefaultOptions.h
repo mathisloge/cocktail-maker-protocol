@@ -79,6 +79,15 @@ struct ClientDefaultOptionsT : public TBase
             >;
 
         /// @brief Extra options for @ref
+        ///     proto::message::Nak message.
+        using Nak =
+            std::tuple<
+                comms::option::app::NoReadImpl,
+                comms::option::app::NoDispatchImpl,
+                typename TBase::message::Nak
+            >;
+
+        /// @brief Extra options for @ref
         ///     proto::message::Ping message.
         using Ping =
             std::tuple<

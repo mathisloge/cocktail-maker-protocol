@@ -57,6 +57,11 @@ auto dispatchServerInputMessage(
         using MsgType = proto::message::Ack<InterfaceType, TProtOptions>;
         return handler.handle(static_cast<MsgType&>(msg));
     }
+    case 4 /* 0x4 */:
+    {
+        using MsgType = proto::message::Nak<InterfaceType, TProtOptions>;
+        return handler.handle(static_cast<MsgType&>(msg));
+    }
     case 17 /* 0x11 */:
     {
         using MsgType = proto::message::DeviceInfoResponse<InterfaceType, TProtOptions>;

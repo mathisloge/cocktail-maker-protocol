@@ -17,6 +17,7 @@ enum MsgId : std::uint16_t
     MsgId_Ping = 1, ///< message id of <b>Ping Server Message</b> message.
     MsgId_Pong = 2, ///< message id of <b>Pong Client Message</b> message.
     MsgId_Ack = 3, ///< message id of <b>Ack</b> message.
+    MsgId_Nak = 4, ///< message id of <b>Nak</b> message.
     MsgId_DeviceInfoRequest = 16, ///< message id of <b>Device Info Request</b> message.
     MsgId_DeviceInfoResponse = 17, ///< message id of <b>Device Info Response</b> message.
     MsgId_EmergencyStop = 18, ///< message id of <b>Emergency Stop</b> message.

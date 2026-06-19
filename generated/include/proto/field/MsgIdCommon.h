@@ -68,6 +68,7 @@ struct MsgIdCommon
             std::make_pair(proto::MsgId_Ping, "Ping Server Message"),
             std::make_pair(proto::MsgId_Pong, "Pong Client Message"),
             std::make_pair(proto::MsgId_Ack, "Ack"),
+            std::make_pair(proto::MsgId_Nak, "Nak"),
             std::make_pair(proto::MsgId_DeviceInfoRequest, "Device Info Request"),
             std::make_pair(proto::MsgId_DeviceInfoResponse, "Device Info Response"),
             std::make_pair(proto::MsgId_EmergencyStop, "Emergency Stop"),

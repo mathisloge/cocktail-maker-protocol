@@ -62,6 +62,10 @@ struct DefaultOptionsT : public TBase
         using LoadCellSetRefWeight = comms::option::app::EmptyOption;
 
         /// @brief Extra options for @ref
+        ///     proto::message::Nak message.
+        using Nak = comms::option::app::EmptyOption;
+
+        /// @brief Extra options for @ref
         ///     proto::message::Ping message.
         using Ping = comms::option::app::EmptyOption;
 

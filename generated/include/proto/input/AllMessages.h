@@ -12,6 +12,7 @@
 #include "proto/message/EmergencyStop.h"
 #include "proto/message/LoadCellResetOffset.h"
 #include "proto/message/LoadCellSetRefWeight.h"
+#include "proto/message/Nak.h"
 #include "proto/message/Ping.h"
 #include "proto/message/Pong.h"
 #include "proto/options/DefaultOptions.h"
@@ -31,6 +32,7 @@ using AllMessages =
         proto::message::Ping<TBase, TOpt>,
         proto::message::Pong<TBase, TOpt>,
         proto::message::Ack<TBase, TOpt>,
+        proto::message::Nak<TBase, TOpt>,
         proto::message::DeviceInfoRequest<TBase, TOpt>,
         proto::message::DeviceInfoResponse<TBase, TOpt>,
         proto::message::EmergencyStop<TBase, TOpt>,
@@ -51,6 +53,7 @@ using AllMessages =
     using prefix_ ## Ping ## suffix_ = proto::message::Ping<interface_, opts_>; \
     using prefix_ ## Pong ## suffix_ = proto::message::Pong<interface_, opts_>; \
     using prefix_ ## Ack ## suffix_ = proto::message::Ack<interface_, opts_>; \
+    using prefix_ ## Nak ## suffix_ = proto::message::Nak<interface_, opts_>; \
     using prefix_ ## DeviceInfoRequest ## suffix_ = proto::message::DeviceInfoRequest<interface_, opts_>; \
     using prefix_ ## DeviceInfoResponse ## suffix_ = proto::message::DeviceInfoResponse<interface_, opts_>; \
     using prefix_ ## EmergencyStop ## suffix_ = proto::message::EmergencyStop<interface_, opts_>; \
