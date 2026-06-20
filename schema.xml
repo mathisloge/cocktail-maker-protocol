@@ -24,6 +24,10 @@
         <!-- Load cell related messages -->
         <string name="MsgLoadCellResetOffsetName" defaultValue="LoadCell Reset Offset" />
         <string name="MsgLoadCellSetRefWeightName" defaultValue="LoadCell Set Reference Weight" />
+        <!-- Pump related messages -->
+        <string name="MsgPumpStartCalibrationName" defaultValue="Pump Start Calibration" />
+        <string name="MsgPumpFinishedCalibrationResponseName"
+            defaultValue="Pump Finished Calibration Response" />
 
         <enum name="MsgId" type="uint16" semanticType="messageId">
             <!-- General messages -->
@@ -41,6 +45,14 @@
                 displayName="^MsgLoadCellResetOffsetName" />
             <validValue name="LoadCellSetRefWeight" val="0x021"
                 displayName="^MsgLoadCellSetRefWeightName" />
+
+            <!-- Pump related messages -->
+            <validValue name="PumpStartCalibration" val="0x031"
+                displayName="^MsgPumpStartCalibrationName" />
+            <validValue name="PumpFinishedCalibrationResponse" val="0x032"
+                displayName="^MsgPumpFinishedCalibrationResponseName" />
+
+
         </enum>
 
         <enum name="ErrorCode" type="uint8">
@@ -56,6 +68,7 @@
         <int name="DispenserId" type="uint8" />
         <int name="Millilitre" type="int16" />
         <int name="Gram" type="int16" />
+        <int name="PumpStep" type="uint16" />
     </fields>
 
     <!-- General messages -->
@@ -144,6 +157,30 @@
         </fields>
     </message>
 
+    <!-- Pump related messages -->
+    <message name="PumpStartCalibration" id="MsgId.PumpStartCalibration" sender="server"
+        displayName="^MsgPumpStartCalibrationName">
+        <description>
+            Start the calibration of a pump.
+            The client must respond with an Ack.
+        </description>
+        <fields>
+            <ref field="DispenserId" />
+            <ref field="PumpStep" description="The number of steps to take." />
+        </fields>
+    </message>
+    <message name="PumpFinishedCalibrationResponse" id="MsgId.PumpFinishedCalibrationResponse"
+        sender="client"
+        displayName="^MsgPumpFinishedCalibrationResponseName">
+        <description>
+            Should be send after a calibration has finished. Must use same TransactionId as the
+            PumpStartCalibration.
+        </description>
+        <fields>
+            <ref field="PumpStep" description="Number of steps per millilitre" />
+            <ref field="Millilitre" description="The pumped millilitre." />
+        </fields>
+    </message>
 
     <interface name="FrameInterface">
         <int name="TransactionId" type="uint8" />

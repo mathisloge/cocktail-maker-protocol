@@ -73,7 +73,9 @@ struct MsgIdCommon
             std::make_pair(proto::MsgId_DeviceInfoResponse, "Device Info Response"),
             std::make_pair(proto::MsgId_EmergencyStop, "Emergency Stop"),
             std::make_pair(proto::MsgId_LoadCellResetOffset, "LoadCell Reset Offset"),
-            std::make_pair(proto::MsgId_LoadCellSetRefWeight, "LoadCell Set Reference Weight")
+            std::make_pair(proto::MsgId_LoadCellSetRefWeight, "LoadCell Set Reference Weight"),
+            std::make_pair(proto::MsgId_PumpStartCalibration, "Pump Start Calibration"),
+            std::make_pair(proto::MsgId_PumpFinishedCalibrationResponse, "Pump Finished Calibration Response")
         };
         static const std::size_t MapSize = std::extent<decltype(Map)>::value;
 

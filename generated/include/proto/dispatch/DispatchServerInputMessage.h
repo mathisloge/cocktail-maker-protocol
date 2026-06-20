@@ -67,6 +67,11 @@ auto dispatchServerInputMessage(
         using MsgType = proto::message::DeviceInfoResponse<InterfaceType, TProtOptions>;
         return handler.handle(static_cast<MsgType&>(msg));
     }
+    case 50 /* 0x32 */:
+    {
+        using MsgType = proto::message::PumpFinishedCalibrationResponse<InterfaceType, TProtOptions>;
+        return handler.handle(static_cast<MsgType&>(msg));
+    }
     default:
         break;
     };

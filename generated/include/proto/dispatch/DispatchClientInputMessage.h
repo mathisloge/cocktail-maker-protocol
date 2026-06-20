@@ -72,6 +72,11 @@ auto dispatchClientInputMessage(
         using MsgType = proto::message::LoadCellSetRefWeight<InterfaceType, TProtOptions>;
         return handler.handle(static_cast<MsgType&>(msg));
     }
+    case 49 /* 0x31 */:
+    {
+        using MsgType = proto::message::PumpStartCalibration<InterfaceType, TProtOptions>;
+        return handler.handle(static_cast<MsgType&>(msg));
+    }
     default:
         break;
     };

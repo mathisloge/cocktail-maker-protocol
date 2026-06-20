@@ -11,6 +11,7 @@
 #include "proto/message/LoadCellResetOffset.h"
 #include "proto/message/LoadCellSetRefWeight.h"
 #include "proto/message/Ping.h"
+#include "proto/message/PumpStartCalibration.h"
 #include "proto/options/DefaultOptions.h"
 
 namespace proto
@@ -29,7 +30,8 @@ using ClientInputMessages =
         proto::message::DeviceInfoRequest<TBase, TOpt>,
         proto::message::EmergencyStop<TBase, TOpt>,
         proto::message::LoadCellResetOffset<TBase, TOpt>,
-        proto::message::LoadCellSetRefWeight<TBase, TOpt>
+        proto::message::LoadCellSetRefWeight<TBase, TOpt>,
+        proto::message::PumpStartCalibration<TBase, TOpt>
     >;
 
 } // namespace input
@@ -46,7 +48,8 @@ using ClientInputMessages =
     using prefix_ ## DeviceInfoRequest ## suffix_ = proto::message::DeviceInfoRequest<interface_, opts_>; \
     using prefix_ ## EmergencyStop ## suffix_ = proto::message::EmergencyStop<interface_, opts_>; \
     using prefix_ ## LoadCellResetOffset ## suffix_ = proto::message::LoadCellResetOffset<interface_, opts_>; \
-    using prefix_ ## LoadCellSetRefWeight ## suffix_ = proto::message::LoadCellSetRefWeight<interface_, opts_>;
+    using prefix_ ## LoadCellSetRefWeight ## suffix_ = proto::message::LoadCellSetRefWeight<interface_, opts_>; \
+    using prefix_ ## PumpStartCalibration ## suffix_ = proto::message::PumpStartCalibration<interface_, opts_>;
 
 /// @brief Create type aliases for the client input messages of the protocol using default options.
 /// @param prefix_ Prefix of the alias message type.

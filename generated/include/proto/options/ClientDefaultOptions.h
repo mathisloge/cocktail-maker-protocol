@@ -104,6 +104,26 @@ struct ClientDefaultOptionsT : public TBase
                 comms::option::app::NoDispatchImpl,
                 typename TBase::message::Pong
             >;
+
+        /// @brief Extra options for @ref
+        ///     proto::message::PumpFinishedCalibrationResponse
+        ///     message.
+        using PumpFinishedCalibrationResponse =
+            std::tuple<
+                comms::option::app::NoReadImpl,
+                comms::option::app::NoDispatchImpl,
+                typename TBase::message::PumpFinishedCalibrationResponse
+            >;
+
+        /// @brief Extra options for @ref
+        ///     proto::message::PumpStartCalibration
+        ///     message.
+        using PumpStartCalibration =
+            std::tuple<
+                comms::option::app::NoWriteImpl,
+                comms::option::app::NoRefreshImpl,
+                typename TBase::message::PumpStartCalibration
+            >;
     }; // struct message
 };
 

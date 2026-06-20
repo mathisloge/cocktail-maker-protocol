@@ -72,6 +72,16 @@ struct DefaultOptionsT : public TBase
         /// @brief Extra options for @ref
         ///     proto::message::Pong message.
         using Pong = comms::option::app::EmptyOption;
+
+        /// @brief Extra options for @ref
+        ///     proto::message::PumpFinishedCalibrationResponse
+        ///     message.
+        using PumpFinishedCalibrationResponse = comms::option::app::EmptyOption;
+
+        /// @brief Extra options for @ref
+        ///     proto::message::PumpStartCalibration
+        ///     message.
+        using PumpStartCalibration = comms::option::app::EmptyOption;
     }; // struct message
 
     /// @brief Extra options for frames.

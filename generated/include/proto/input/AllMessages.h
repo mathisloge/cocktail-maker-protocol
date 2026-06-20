@@ -15,6 +15,8 @@
 #include "proto/message/Nak.h"
 #include "proto/message/Ping.h"
 #include "proto/message/Pong.h"
+#include "proto/message/PumpFinishedCalibrationResponse.h"
+#include "proto/message/PumpStartCalibration.h"
 #include "proto/options/DefaultOptions.h"
 
 namespace proto
@@ -37,7 +39,9 @@ using AllMessages =
         proto::message::DeviceInfoResponse<TBase, TOpt>,
         proto::message::EmergencyStop<TBase, TOpt>,
         proto::message::LoadCellResetOffset<TBase, TOpt>,
-        proto::message::LoadCellSetRefWeight<TBase, TOpt>
+        proto::message::LoadCellSetRefWeight<TBase, TOpt>,
+        proto::message::PumpStartCalibration<TBase, TOpt>,
+        proto::message::PumpFinishedCalibrationResponse<TBase, TOpt>
     >;
 
 } // namespace input
@@ -58,7 +62,9 @@ using AllMessages =
     using prefix_ ## DeviceInfoResponse ## suffix_ = proto::message::DeviceInfoResponse<interface_, opts_>; \
     using prefix_ ## EmergencyStop ## suffix_ = proto::message::EmergencyStop<interface_, opts_>; \
     using prefix_ ## LoadCellResetOffset ## suffix_ = proto::message::LoadCellResetOffset<interface_, opts_>; \
-    using prefix_ ## LoadCellSetRefWeight ## suffix_ = proto::message::LoadCellSetRefWeight<interface_, opts_>;
+    using prefix_ ## LoadCellSetRefWeight ## suffix_ = proto::message::LoadCellSetRefWeight<interface_, opts_>; \
+    using prefix_ ## PumpStartCalibration ## suffix_ = proto::message::PumpStartCalibration<interface_, opts_>; \
+    using prefix_ ## PumpFinishedCalibrationResponse ## suffix_ = proto::message::PumpFinishedCalibrationResponse<interface_, opts_>;
 
 /// @brief Create type aliases for the all messages of the protocol using default options.
 /// @param prefix_ Prefix of the alias message type.
