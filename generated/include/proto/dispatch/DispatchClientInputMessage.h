@@ -77,6 +77,11 @@ auto dispatchClientInputMessage(
         using MsgType = proto::message::PumpStartCalibration<InterfaceType, TProtOptions>;
         return handler.handle(static_cast<MsgType&>(msg));
     }
+    case 64 /* 0x40 */:
+    {
+        using MsgType = proto::message::HighlightDispenser<InterfaceType, TProtOptions>;
+        return handler.handle(static_cast<MsgType&>(msg));
+    }
     default:
         break;
     };

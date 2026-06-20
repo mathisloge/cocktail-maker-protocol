@@ -71,6 +71,7 @@ public:
             case 32 /* 0x20 */: return MsgPtr(new proto::message::LoadCellResetOffset<TInterface, TProtOptions>);
             case 33 /* 0x21 */: return MsgPtr(new proto::message::LoadCellSetRefWeight<TInterface, TProtOptions>);
             case 49 /* 0x31 */: return MsgPtr(new proto::message::PumpStartCalibration<TInterface, TProtOptions>);
+            case 64 /* 0x40 */: return MsgPtr(new proto::message::HighlightDispenser<TInterface, TProtOptions>);
             default: break;
         }
 
@@ -105,6 +106,7 @@ public:
             case 32 /* 0x20 */: return 1;
             case 33 /* 0x21 */: return 1;
             case 49 /* 0x31 */: return 1;
+            case 64 /* 0x40 */: return 1;
             default: break;
         }
 

@@ -59,6 +59,16 @@ struct ServerDefaultOptionsT : public TBase
             >;
 
         /// @brief Extra options for @ref
+        ///     proto::message::HighlightDispenser
+        ///     message.
+        using HighlightDispenser =
+            std::tuple<
+                comms::option::app::NoReadImpl,
+                comms::option::app::NoDispatchImpl,
+                typename TBase::message::HighlightDispenser
+            >;
+
+        /// @brief Extra options for @ref
         ///     proto::message::LoadCellResetOffset
         ///     message.
         using LoadCellResetOffset =

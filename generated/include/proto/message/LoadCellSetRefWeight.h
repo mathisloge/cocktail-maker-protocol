@@ -59,7 +59,7 @@ struct LoadCellSetRefWeightFields
 /// @brief Definition of <b>"LoadCell Set Reference Weight"</b> message class.
 /// @details
 /// Sets a specific load cell's current measurement to the given
-/// reference weight. The client must respond with an Ack. @n
+/// reference weight. The client must respond with an Ack/Nak. @n
 ///     See @ref LoadCellSetRefWeightFields for definition of the fields this message contains.
 /// @tparam TMsgBase Base (interface) class.
 /// @tparam TOpt Extra options

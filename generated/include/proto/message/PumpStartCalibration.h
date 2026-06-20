@@ -57,7 +57,7 @@ struct PumpStartCalibrationFields
 /// @brief Definition of <b>"Pump Start Calibration"</b> message class.
 /// @details
 /// Start the calibration of a pump. The client must respond with
-/// an Ack. @n
+/// an Ack/Nak. @n
 ///     See @ref PumpStartCalibrationFields for definition of the fields this message contains.
 /// @tparam TMsgBase Base (interface) class.
 /// @tparam TOpt Extra options

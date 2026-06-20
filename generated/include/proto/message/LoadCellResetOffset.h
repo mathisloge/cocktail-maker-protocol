@@ -46,7 +46,7 @@ struct LoadCellResetOffsetFields
 /// @brief Definition of <b>"LoadCell Reset Offset"</b> message class.
 /// @details
 /// Requests a specific load cell to be reset to its current
-/// measured value. The client must respond with an Ack. @n
+/// measured value. The client must respond with an Ack/Nak. @n
 ///     See @ref LoadCellResetOffsetFields for definition of the fields this message contains.
 /// @tparam TMsgBase Base (interface) class.
 /// @tparam TOpt Extra options

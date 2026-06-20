@@ -25,11 +25,12 @@ enum MsgId : std::uint16_t
     MsgId_LoadCellSetRefWeight = 33, ///< message id of <b>LoadCell Set Reference Weight</b> message.
     MsgId_PumpStartCalibration = 49, ///< message id of <b>Pump Start Calibration</b> message.
     MsgId_PumpFinishedCalibrationResponse = 50, ///< message id of <b>Pump Finished Calibration Response</b> message.
+    MsgId_HighlightDispenser = 64, ///< message id of <b>Highlight Dispenser</b> message.
 
     // --- Extra values generated for convenience ---
     MsgId_FirstValue = 1, ///< First defined value.
-    MsgId_LastValue = 50, ///< Last defined value.
-    MsgId_ValuesLimit = 51, ///< Upper limit for defined values.
+    MsgId_LastValue = 64, ///< Last defined value.
+    MsgId_ValuesLimit = 65, ///< Upper limit for defined values.
 };
 
 } // namespace proto

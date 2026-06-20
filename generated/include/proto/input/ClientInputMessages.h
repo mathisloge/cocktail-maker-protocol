@@ -8,6 +8,7 @@
 #include <tuple>
 #include "proto/message/DeviceInfoRequest.h"
 #include "proto/message/EmergencyStop.h"
+#include "proto/message/HighlightDispenser.h"
 #include "proto/message/LoadCellResetOffset.h"
 #include "proto/message/LoadCellSetRefWeight.h"
 #include "proto/message/Ping.h"
@@ -31,7 +32,8 @@ using ClientInputMessages =
         proto::message::EmergencyStop<TBase, TOpt>,
         proto::message::LoadCellResetOffset<TBase, TOpt>,
         proto::message::LoadCellSetRefWeight<TBase, TOpt>,
-        proto::message::PumpStartCalibration<TBase, TOpt>
+        proto::message::PumpStartCalibration<TBase, TOpt>,
+        proto::message::HighlightDispenser<TBase, TOpt>
     >;
 
 } // namespace input
@@ -49,7 +51,8 @@ using ClientInputMessages =
     using prefix_ ## EmergencyStop ## suffix_ = proto::message::EmergencyStop<interface_, opts_>; \
     using prefix_ ## LoadCellResetOffset ## suffix_ = proto::message::LoadCellResetOffset<interface_, opts_>; \
     using prefix_ ## LoadCellSetRefWeight ## suffix_ = proto::message::LoadCellSetRefWeight<interface_, opts_>; \
-    using prefix_ ## PumpStartCalibration ## suffix_ = proto::message::PumpStartCalibration<interface_, opts_>;
+    using prefix_ ## PumpStartCalibration ## suffix_ = proto::message::PumpStartCalibration<interface_, opts_>; \
+    using prefix_ ## HighlightDispenser ## suffix_ = proto::message::HighlightDispenser<interface_, opts_>;
 
 /// @brief Create type aliases for the client input messages of the protocol using default options.
 /// @param prefix_ Prefix of the alias message type.

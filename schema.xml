@@ -28,6 +28,8 @@
         <string name="MsgPumpStartCalibrationName" defaultValue="Pump Start Calibration" />
         <string name="MsgPumpFinishedCalibrationResponseName"
             defaultValue="Pump Finished Calibration Response" />
+        <!-- Dispenser related messages -->
+        <string name="MsgHighlightDispenserName" defaultValue="Highlight Dispenser" />
 
         <enum name="MsgId" type="uint16" semanticType="messageId">
             <!-- General messages -->
@@ -52,7 +54,9 @@
             <validValue name="PumpFinishedCalibrationResponse" val="0x032"
                 displayName="^MsgPumpFinishedCalibrationResponseName" />
 
-
+            <!-- Dispenser related messages -->
+            <validValue name="HighlightDispenser" val="0x040"
+                displayName="^MsgHighlightDispenserName" />
         </enum>
 
         <enum name="ErrorCode" type="uint8">
@@ -69,6 +73,13 @@
         <int name="Millilitre" type="int16" />
         <int name="Gram" type="int16" />
         <int name="PumpStep" type="uint16" />
+        <int name="Milliseconds" type="int16" units="milliseconds" />
+
+        <enum name="LedEffect" type="uint8">
+            <validValue name="Off" val="0" />
+            <validValue name="Highlight" val="1" />
+            <validValue name="Warn" val="0x2" />
+        </enum>
     </fields>
 
     <!-- General messages -->
@@ -128,7 +139,7 @@
         displayName="^MsgEmergencyStopName">
         <description>
             Requests the client to bring the machine into a safe state.
-            The client must respond with an Ack.
+            The client must respond with an Ack/Nak.
         </description>
     </message>
 
@@ -137,7 +148,7 @@
         displayName="^MsgLoadCellResetOffsetName">
         <description>
             Requests a specific load cell to be reset to its current measured value.
-            The client must respond with an Ack.
+            The client must respond with an Ack/Nak.
         </description>
         <fields>
             <ref field="DispenserId"
@@ -148,7 +159,7 @@
         displayName="^MsgLoadCellSetRefWeightName">
         <description>
             Sets a specific load cell's current measurement to the given reference weight.
-            The client must respond with an Ack.
+            The client must respond with an Ack/Nak.
         </description>
         <fields>
             <ref field="DispenserId"
@@ -162,7 +173,7 @@
         displayName="^MsgPumpStartCalibrationName">
         <description>
             Start the calibration of a pump.
-            The client must respond with an Ack.
+            The client must respond with an Ack/Nak.
         </description>
         <fields>
             <ref field="DispenserId" />
@@ -173,12 +184,26 @@
         sender="client"
         displayName="^MsgPumpFinishedCalibrationResponseName">
         <description>
-            Should be send after a calibration has finished. Must use same TransactionId as the
-            PumpStartCalibration.
+            Should be send after a calibration has finished.
+            Must use same TransactionId as the PumpStartCalibration.
         </description>
         <fields>
             <ref field="PumpStep" description="Number of steps per millilitre" />
             <ref field="Millilitre" description="The pumped millilitre." />
+        </fields>
+    </message>
+
+    <!-- Dispenser related messages -->
+    <message name="HighlightDispenser" id="MsgId.HighlightDispenser" sender="server"
+        displayName="^MsgHighlightDispenserName">
+        <description>
+            Highlight a dispenser.
+            The client must respond with an Ack/Nak.
+        </description>
+        <fields>
+            <ref field="DispenserId" />
+            <ref field="LedEffect" />
+            <ref field="Milliseconds" description="Time after the led effect will be turned off." />
         </fields>
     </message>
 
