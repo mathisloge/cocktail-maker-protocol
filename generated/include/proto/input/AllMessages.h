@@ -9,6 +9,8 @@
 #include "proto/message/Ack.h"
 #include "proto/message/DeviceInfoRequest.h"
 #include "proto/message/DeviceInfoResponse.h"
+#include "proto/message/Dispense.h"
+#include "proto/message/DispenseFinished.h"
 #include "proto/message/EmergencyStop.h"
 #include "proto/message/HighlightDispenser.h"
 #include "proto/message/LoadCellResetOffset.h"
@@ -43,7 +45,9 @@ using AllMessages =
         proto::message::LoadCellSetRefWeight<TBase, TOpt>,
         proto::message::PumpStartCalibration<TBase, TOpt>,
         proto::message::PumpFinishedCalibrationResponse<TBase, TOpt>,
-        proto::message::HighlightDispenser<TBase, TOpt>
+        proto::message::HighlightDispenser<TBase, TOpt>,
+        proto::message::Dispense<TBase, TOpt>,
+        proto::message::DispenseFinished<TBase, TOpt>
     >;
 
 } // namespace input
@@ -67,7 +71,9 @@ using AllMessages =
     using prefix_ ## LoadCellSetRefWeight ## suffix_ = proto::message::LoadCellSetRefWeight<interface_, opts_>; \
     using prefix_ ## PumpStartCalibration ## suffix_ = proto::message::PumpStartCalibration<interface_, opts_>; \
     using prefix_ ## PumpFinishedCalibrationResponse ## suffix_ = proto::message::PumpFinishedCalibrationResponse<interface_, opts_>; \
-    using prefix_ ## HighlightDispenser ## suffix_ = proto::message::HighlightDispenser<interface_, opts_>;
+    using prefix_ ## HighlightDispenser ## suffix_ = proto::message::HighlightDispenser<interface_, opts_>; \
+    using prefix_ ## Dispense ## suffix_ = proto::message::Dispense<interface_, opts_>; \
+    using prefix_ ## DispenseFinished ## suffix_ = proto::message::DispenseFinished<interface_, opts_>;
 
 /// @brief Create type aliases for the all messages of the protocol using default options.
 /// @param prefix_ Prefix of the alias message type.

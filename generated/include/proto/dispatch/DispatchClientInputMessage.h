@@ -82,6 +82,11 @@ auto dispatchClientInputMessage(
         using MsgType = proto::message::HighlightDispenser<InterfaceType, TProtOptions>;
         return handler.handle(static_cast<MsgType&>(msg));
     }
+    case 65 /* 0x41 */:
+    {
+        using MsgType = proto::message::Dispense<InterfaceType, TProtOptions>;
+        return handler.handle(static_cast<MsgType&>(msg));
+    }
     default:
         break;
     };

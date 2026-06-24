@@ -8,6 +8,7 @@
 #include <tuple>
 #include "proto/message/Ack.h"
 #include "proto/message/DeviceInfoResponse.h"
+#include "proto/message/DispenseFinished.h"
 #include "proto/message/Nak.h"
 #include "proto/message/Pong.h"
 #include "proto/message/PumpFinishedCalibrationResponse.h"
@@ -29,7 +30,8 @@ using ServerInputMessages =
         proto::message::Ack<TBase, TOpt>,
         proto::message::Nak<TBase, TOpt>,
         proto::message::DeviceInfoResponse<TBase, TOpt>,
-        proto::message::PumpFinishedCalibrationResponse<TBase, TOpt>
+        proto::message::PumpFinishedCalibrationResponse<TBase, TOpt>,
+        proto::message::DispenseFinished<TBase, TOpt>
     >;
 
 } // namespace input
@@ -46,7 +48,8 @@ using ServerInputMessages =
     using prefix_ ## Ack ## suffix_ = proto::message::Ack<interface_, opts_>; \
     using prefix_ ## Nak ## suffix_ = proto::message::Nak<interface_, opts_>; \
     using prefix_ ## DeviceInfoResponse ## suffix_ = proto::message::DeviceInfoResponse<interface_, opts_>; \
-    using prefix_ ## PumpFinishedCalibrationResponse ## suffix_ = proto::message::PumpFinishedCalibrationResponse<interface_, opts_>;
+    using prefix_ ## PumpFinishedCalibrationResponse ## suffix_ = proto::message::PumpFinishedCalibrationResponse<interface_, opts_>; \
+    using prefix_ ## DispenseFinished ## suffix_ = proto::message::DispenseFinished<interface_, opts_>;
 
 /// @brief Create type aliases for the server input messages of the protocol using default options.
 /// @param prefix_ Prefix of the alias message type.

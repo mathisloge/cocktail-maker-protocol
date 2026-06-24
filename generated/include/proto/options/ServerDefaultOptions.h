@@ -50,6 +50,25 @@ struct ServerDefaultOptionsT : public TBase
             >;
 
         /// @brief Extra options for @ref
+        ///     proto::message::Dispense message.
+        using Dispense =
+            std::tuple<
+                comms::option::app::NoReadImpl,
+                comms::option::app::NoDispatchImpl,
+                typename TBase::message::Dispense
+            >;
+
+        /// @brief Extra options for @ref
+        ///     proto::message::DispenseFinished
+        ///     message.
+        using DispenseFinished =
+            std::tuple<
+                comms::option::app::NoWriteImpl,
+                comms::option::app::NoRefreshImpl,
+                typename TBase::message::DispenseFinished
+            >;
+
+        /// @brief Extra options for @ref
         ///     proto::message::EmergencyStop message.
         using EmergencyStop =
             std::tuple<

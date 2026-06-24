@@ -30,6 +30,8 @@
             defaultValue="Pump Finished Calibration Response" />
         <!-- Dispenser related messages -->
         <string name="MsgHighlightDispenserName" defaultValue="Highlight Dispenser" />
+        <string name="MsgDispenseName" defaultValue="Dispense" />
+        <string name="MsgDispenseFinishedName" defaultValue="Dispense Finished" />
 
         <enum name="MsgId" type="uint16" semanticType="messageId">
             <!-- General messages -->
@@ -57,6 +59,8 @@
             <!-- Dispenser related messages -->
             <validValue name="HighlightDispenser" val="0x040"
                 displayName="^MsgHighlightDispenserName" />
+            <validValue name="Dispense" val="0x041" displayName="^MsgDispenseName" />
+            <validValue name="DispenseFinished" val="0x042" displayName="^MsgDispenseFinishedName" />
         </enum>
 
         <enum name="ErrorCode" type="uint8">
@@ -83,23 +87,27 @@
     </fields>
 
     <!-- General messages -->
-    <message name="Ping" id="MsgId.Ping" sender="server" displayName="^MsgPingName">
+    <message name="Ping"
+        id="MsgId.Ping" sender="server" displayName="^MsgPingName">
         <description>
             Keep-alive message initiated by the server.
         </description>
     </message>
-    <message name="Pong" id="MsgId.Pong" sender="client" displayName="^MsgPongName">
+    <message
+        name="Pong" id="MsgId.Pong" sender="client" displayName="^MsgPongName">
         <description>
             Keep-alive response sent by the client.
         </description>
     </message>
-    <message name="Ack" id="MsgId.Ack" sender="client" displayName="^MsgAckName">
+    <message
+        name="Ack" id="MsgId.Ack" sender="client" displayName="^MsgAckName">
         <description>
             General acknowledgment message for a command.
             The command being acknowledged is identified via the frame's TransactionId.
         </description>
     </message>
-    <message name="Nak" id="MsgId.Nak" sender="client" displayName="^MsgNakName">
+    <message
+        name="Nak" id="MsgId.Nak" sender="client" displayName="^MsgNakName">
         <description>
             General negative-acknowledgment message for a command.
             The command being acknowledged is identified via the frame's TransactionId.
@@ -109,13 +117,15 @@
         </fields>
     </message>
 
-    <message name="DeviceInfoRequest" id="MsgId.DeviceInfoRequest" sender="server"
+    <message
+        name="DeviceInfoRequest" id="MsgId.DeviceInfoRequest" sender="server"
         displayName="^MsgDeviceInfoRequestName">
         <description>
             Requests the device information.
         </description>
     </message>
-    <message name="DeviceInfoResponse" id="MsgId.DeviceInfoResponse" sender="client"
+    <message
+        name="DeviceInfoResponse" id="MsgId.DeviceInfoResponse" sender="client"
         displayName="^MsgDeviceInfoResponseName">
         <description>
             Response to a DeviceInfoRequest, containing the device information.
@@ -135,7 +145,8 @@
         </fields>
     </message>
 
-    <message name="EmergencyStop" id="MsgId.EmergencyStop" sender="server"
+    <message
+        name="EmergencyStop" id="MsgId.EmergencyStop" sender="server"
         displayName="^MsgEmergencyStopName">
         <description>
             Requests the client to bring the machine into a safe state.
@@ -144,7 +155,8 @@
     </message>
 
     <!-- Load cell related messages -->
-    <message name="LoadCellResetOffset" id="MsgId.LoadCellResetOffset" sender="server"
+    <message
+        name="LoadCellResetOffset" id="MsgId.LoadCellResetOffset" sender="server"
         displayName="^MsgLoadCellResetOffsetName">
         <description>
             Requests a specific load cell to be reset to its current measured value.
@@ -155,7 +167,8 @@
                 description="The dispenser whose load cell this command applies to." />
         </fields>
     </message>
-    <message name="LoadCellSetRefWeight" id="MsgId.LoadCellSetRefWeight" sender="server"
+    <message
+        name="LoadCellSetRefWeight" id="MsgId.LoadCellSetRefWeight" sender="server"
         displayName="^MsgLoadCellSetRefWeightName">
         <description>
             Sets a specific load cell's current measurement to the given reference weight.
@@ -169,7 +182,8 @@
     </message>
 
     <!-- Pump related messages -->
-    <message name="PumpStartCalibration" id="MsgId.PumpStartCalibration" sender="server"
+    <message
+        name="PumpStartCalibration" id="MsgId.PumpStartCalibration" sender="server"
         displayName="^MsgPumpStartCalibrationName">
         <description>
             Start the calibration of a pump.
@@ -180,7 +194,8 @@
             <ref field="PumpStep" description="The number of steps to take." />
         </fields>
     </message>
-    <message name="PumpFinishedCalibrationResponse" id="MsgId.PumpFinishedCalibrationResponse"
+    <message
+        name="PumpFinishedCalibrationResponse" id="MsgId.PumpFinishedCalibrationResponse"
         sender="client"
         displayName="^MsgPumpFinishedCalibrationResponseName">
         <description>
@@ -194,7 +209,8 @@
     </message>
 
     <!-- Dispenser related messages -->
-    <message name="HighlightDispenser" id="MsgId.HighlightDispenser" sender="server"
+    <message
+        name="HighlightDispenser" id="MsgId.HighlightDispenser" sender="server"
         displayName="^MsgHighlightDispenserName">
         <description>
             Highlight a dispenser.
@@ -207,7 +223,29 @@
         </fields>
     </message>
 
-    <interface name="FrameInterface">
+    <message name="Dispense" id="MsgId.Dispense" sender="server"
+        displayName="^MsgDispenseName">
+        <description>
+            Dispense the specified amount of liquied.
+            The client must respond with an Ack/Nak.
+        </description>
+        <fields>
+            <ref field="DispenserId" />
+            <ref field="Millilitre" description="The amount to dispense." />
+        </fields>
+    </message>
+
+    <message name="DispenseFinished" id="MsgId.DispenseFinished" sender="client"
+        displayName="^MsgDispenseFinishedName">
+        <description>
+            The dispense action has been finished.
+        </description>
+        <fields>
+        </fields>
+    </message>
+
+    <interface
+        name="FrameInterface">
         <int name="TransactionId" type="uint8" />
     </interface>
 

@@ -48,6 +48,15 @@ struct DefaultOptionsT : public TBase
         using DeviceInfoResponse = comms::option::app::EmptyOption;
 
         /// @brief Extra options for @ref
+        ///     proto::message::Dispense message.
+        using Dispense = comms::option::app::EmptyOption;
+
+        /// @brief Extra options for @ref
+        ///     proto::message::DispenseFinished
+        ///     message.
+        using DispenseFinished = comms::option::app::EmptyOption;
+
+        /// @brief Extra options for @ref
         ///     proto::message::EmergencyStop message.
         using EmergencyStop = comms::option::app::EmptyOption;
 
