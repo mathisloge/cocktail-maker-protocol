@@ -71,6 +71,7 @@ public:
             case 17 /* 0x11 */: return MsgPtr(new proto::message::DeviceInfoResponse<TInterface, TProtOptions>);
             case 50 /* 0x32 */: return MsgPtr(new proto::message::PumpFinishedCalibrationResponse<TInterface, TProtOptions>);
             case 66 /* 0x42 */: return MsgPtr(new proto::message::DispenseFinished<TInterface, TProtOptions>);
+            case 68 /* 0x44 */: return MsgPtr(new proto::message::DispenserFillingQuantityResponse<TInterface, TProtOptions>);
             default: break;
         }
 
@@ -105,6 +106,7 @@ public:
             case 17 /* 0x11 */: return 1;
             case 50 /* 0x32 */: return 1;
             case 66 /* 0x42 */: return 1;
+            case 68 /* 0x44 */: return 1;
             default: break;
         }
 

@@ -57,6 +57,16 @@ struct DefaultOptionsT : public TBase
         using DispenseFinished = comms::option::app::EmptyOption;
 
         /// @brief Extra options for @ref
+        ///     proto::message::DispenserFillingQuantityRequest
+        ///     message.
+        using DispenserFillingQuantityRequest = comms::option::app::EmptyOption;
+
+        /// @brief Extra options for @ref
+        ///     proto::message::DispenserFillingQuantityResponse
+        ///     message.
+        using DispenserFillingQuantityResponse = comms::option::app::EmptyOption;
+
+        /// @brief Extra options for @ref
         ///     proto::message::EmergencyStop message.
         using EmergencyStop = comms::option::app::EmptyOption;
 
@@ -74,6 +84,10 @@ struct DefaultOptionsT : public TBase
         ///     proto::message::LoadCellSetRefWeight
         ///     message.
         using LoadCellSetRefWeight = comms::option::app::EmptyOption;
+
+        /// @brief Extra options for @ref
+        ///     proto::message::LoadCellTare message.
+        using LoadCellTare = comms::option::app::EmptyOption;
 
         /// @brief Extra options for @ref
         ///     proto::message::Nak message.

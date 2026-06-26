@@ -72,6 +72,11 @@ auto dispatchClientInputMessage(
         using MsgType = proto::message::LoadCellSetRefWeight<InterfaceType, TProtOptions>;
         return handler.handle(static_cast<MsgType&>(msg));
     }
+    case 34 /* 0x22 */:
+    {
+        using MsgType = proto::message::LoadCellTare<InterfaceType, TProtOptions>;
+        return handler.handle(static_cast<MsgType&>(msg));
+    }
     case 49 /* 0x31 */:
     {
         using MsgType = proto::message::PumpStartCalibration<InterfaceType, TProtOptions>;
@@ -85,6 +90,11 @@ auto dispatchClientInputMessage(
     case 65 /* 0x41 */:
     {
         using MsgType = proto::message::Dispense<InterfaceType, TProtOptions>;
+        return handler.handle(static_cast<MsgType&>(msg));
+    }
+    case 67 /* 0x43 */:
+    {
+        using MsgType = proto::message::DispenserFillingQuantityRequest<InterfaceType, TProtOptions>;
         return handler.handle(static_cast<MsgType&>(msg));
     }
     default:

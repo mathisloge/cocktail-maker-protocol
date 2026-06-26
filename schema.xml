@@ -24,6 +24,7 @@
         <!-- Load cell related messages -->
         <string name="MsgLoadCellResetOffsetName" defaultValue="LoadCell Reset Offset" />
         <string name="MsgLoadCellSetRefWeightName" defaultValue="LoadCell Set Reference Weight" />
+        <string name="MsgLoadCellTareName" defaultValue="LoadCell Tare" />
         <!-- Pump related messages -->
         <string name="MsgPumpStartCalibrationName" defaultValue="Pump Start Calibration" />
         <string name="MsgPumpFinishedCalibrationResponseName"
@@ -32,6 +33,10 @@
         <string name="MsgHighlightDispenserName" defaultValue="Highlight Dispenser" />
         <string name="MsgDispenseName" defaultValue="Dispense" />
         <string name="MsgDispenseFinishedName" defaultValue="Dispense Finished" />
+        <string name="MsgDispenserFillingQuantityRequestName"
+            defaultValue="Dispenser Filling Quantity Request" />
+        <string name="MsgDispenserFillingQuantityResponseName"
+            defaultValue="Dispenser Filling Quantity Response" />
 
         <enum name="MsgId" type="uint16" semanticType="messageId">
             <!-- General messages -->
@@ -49,6 +54,8 @@
                 displayName="^MsgLoadCellResetOffsetName" />
             <validValue name="LoadCellSetRefWeight" val="0x021"
                 displayName="^MsgLoadCellSetRefWeightName" />
+            <validValue name="LoadCellTare" val="0x022"
+                displayName="^MsgLoadCellTareName" />
 
             <!-- Pump related messages -->
             <validValue name="PumpStartCalibration" val="0x031"
@@ -61,6 +68,10 @@
                 displayName="^MsgHighlightDispenserName" />
             <validValue name="Dispense" val="0x041" displayName="^MsgDispenseName" />
             <validValue name="DispenseFinished" val="0x042" displayName="^MsgDispenseFinishedName" />
+            <validValue name="DispenserFillingQuantityRequest" val="0x043"
+                displayName="^MsgDispenserFillingQuantityRequestName" />
+            <validValue name="DispenserFillingQuantityResponse" val="0x044"
+                displayName="^MsgDispenserFillingQuantityResponseName" />
         </enum>
 
         <enum name="ErrorCode" type="uint8">
@@ -122,6 +133,7 @@
         displayName="^MsgDeviceInfoRequestName">
         <description>
             Requests the device information.
+            Will be responded by DeviceInfoResponse.
         </description>
     </message>
     <message
@@ -180,6 +192,18 @@
             <ref field="Gram" description="The reference weight which is currently applied." />
         </fields>
     </message>
+    <message
+        name="LoadCellTare" id="MsgId.LoadCellTare" sender="server"
+        displayName="^MsgLoadCellTareName">
+        <description>
+            Uses the current applied weight as the zero point.
+            The client must respond with an Ack/Nak.
+        </description>
+        <fields>
+            <ref field="DispenserId"
+                description="The dispenser whose load cell this command applies to." />
+        </fields>
+    </message>
 
     <!-- Pump related messages -->
     <message
@@ -228,6 +252,8 @@
         <description>
             Dispense the specified amount of liquied.
             The client must respond with an Ack/Nak.
+            After the client has finished, a DispenseFinished will be send, or a Nak in case of an
+            error.
         </description>
         <fields>
             <ref field="DispenserId" />
@@ -241,6 +267,29 @@
             The dispense action has been finished.
         </description>
         <fields>
+        </fields>
+    </message>
+
+    <message name="DispenserFillingQuantityRequest" id="MsgId.DispenserFillingQuantityRequest"
+        sender="server"
+        displayName="^MsgDispenserFillingQuantityRequestName">
+        <description>
+            Request the current filling quantity of a dispenser.
+        </description>
+        <fields>
+            <ref field="DispenserId" />
+        </fields>
+    </message>
+
+    <message name="DispenserFillingQuantityResponse" id="MsgId.DispenserFillingQuantityResponse"
+        sender="client"
+        displayName="^MsgDispenserFillingQuantityResponseName">
+        <description>
+            The response to DispenserFillingQuantityRequest.
+            Reports the filling level of a dispenser.
+        </description>
+        <fields>
+            <ref field="Millilitre" description="The measured remaining volume." />
         </fields>
     </message>
 
