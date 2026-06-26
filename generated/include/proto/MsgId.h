@@ -21,9 +21,8 @@ enum MsgId : std::uint16_t
     MsgId_DeviceInfoRequest = 16, ///< message id of <b>Device Info Request</b> message.
     MsgId_DeviceInfoResponse = 17, ///< message id of <b>Device Info Response</b> message.
     MsgId_EmergencyStop = 18, ///< message id of <b>Emergency Stop</b> message.
-    MsgId_LoadCellResetOffset = 32, ///< message id of <b>LoadCell Reset Offset</b> message.
-    MsgId_LoadCellSetRefWeight = 33, ///< message id of <b>LoadCell Set Reference Weight</b> message.
-    MsgId_LoadCellTare = 34, ///< message id of <b>LoadCell Tare</b> message.
+    MsgId_LoadCellCalibrateWithRefWeight = 32, ///< message id of <b>LoadCell Calibrate With Ref Weight</b> message.
+    MsgId_LoadCellTare = 33, ///< message id of <b>LoadCell Tare</b> message.
     MsgId_PumpStartCalibration = 49, ///< message id of <b>Pump Start Calibration</b> message.
     MsgId_PumpFinishedCalibrationResponse = 50, ///< message id of <b>Pump Finished Calibration Response</b> message.
     MsgId_HighlightDispenser = 64, ///< message id of <b>Highlight Dispenser</b> message.

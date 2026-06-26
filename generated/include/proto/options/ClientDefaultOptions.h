@@ -108,23 +108,13 @@ struct ClientDefaultOptionsT : public TBase
             >;
 
         /// @brief Extra options for @ref
-        ///     proto::message::LoadCellResetOffset
+        ///     proto::message::LoadCellCalibrateWithRefWeight
         ///     message.
-        using LoadCellResetOffset =
+        using LoadCellCalibrateWithRefWeight =
             std::tuple<
                 comms::option::app::NoWriteImpl,
                 comms::option::app::NoRefreshImpl,
-                typename TBase::message::LoadCellResetOffset
-            >;
-
-        /// @brief Extra options for @ref
-        ///     proto::message::LoadCellSetRefWeight
-        ///     message.
-        using LoadCellSetRefWeight =
-            std::tuple<
-                comms::option::app::NoWriteImpl,
-                comms::option::app::NoRefreshImpl,
-                typename TBase::message::LoadCellSetRefWeight
+                typename TBase::message::LoadCellCalibrateWithRefWeight
             >;
 
         /// @brief Extra options for @ref

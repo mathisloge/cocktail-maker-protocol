@@ -22,8 +22,8 @@
         <string name="MsgDeviceInfoResponseName" defaultValue="Device Info Response" />
         <string name="MsgEmergencyStopName" defaultValue="Emergency Stop" />
         <!-- Load cell related messages -->
-        <string name="MsgLoadCellResetOffsetName" defaultValue="LoadCell Reset Offset" />
-        <string name="MsgLoadCellSetRefWeightName" defaultValue="LoadCell Set Reference Weight" />
+        <string name="MsgLoadCellCalibrateWithRefWeightName"
+            defaultValue="LoadCell Calibrate With Ref Weight" />
         <string name="MsgLoadCellTareName" defaultValue="LoadCell Tare" />
         <!-- Pump related messages -->
         <string name="MsgPumpStartCalibrationName" defaultValue="Pump Start Calibration" />
@@ -50,11 +50,9 @@
             <validValue name="EmergencyStop" val="0x012" displayName="^MsgEmergencyStopName" />
 
             <!-- Load cell related messages -->
-            <validValue name="LoadCellResetOffset" val="0x020"
-                displayName="^MsgLoadCellResetOffsetName" />
-            <validValue name="LoadCellSetRefWeight" val="0x021"
-                displayName="^MsgLoadCellSetRefWeightName" />
-            <validValue name="LoadCellTare" val="0x022"
+            <validValue name="LoadCellCalibrateWithRefWeight" val="0x020"
+                displayName="^MsgLoadCellCalibrateWithRefWeightName" />
+            <validValue name="LoadCellTare" val="0x021"
                 displayName="^MsgLoadCellTareName" />
 
             <!-- Pump related messages -->
@@ -168,22 +166,11 @@
 
     <!-- Load cell related messages -->
     <message
-        name="LoadCellResetOffset" id="MsgId.LoadCellResetOffset" sender="server"
-        displayName="^MsgLoadCellResetOffsetName">
+        name="LoadCellCalibrateWithRefWeight" id="MsgId.LoadCellCalibrateWithRefWeight"
+        sender="server"
+        displayName="^MsgLoadCellCalibrateWithRefWeightName">
         <description>
-            Requests a specific load cell to be reset to its current measured value.
-            The client must respond with an Ack/Nak.
-        </description>
-        <fields>
-            <ref field="DispenserId"
-                description="The dispenser whose load cell this command applies to." />
-        </fields>
-    </message>
-    <message
-        name="LoadCellSetRefWeight" id="MsgId.LoadCellSetRefWeight" sender="server"
-        displayName="^MsgLoadCellSetRefWeightName">
-        <description>
-            Sets a specific load cell's current measurement to the given reference weight.
+            Calibrates the dispenser related load cell with the given reference weight.
             The client must respond with an Ack/Nak.
         </description>
         <fields>

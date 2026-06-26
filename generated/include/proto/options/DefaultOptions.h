@@ -76,14 +76,9 @@ struct DefaultOptionsT : public TBase
         using HighlightDispenser = comms::option::app::EmptyOption;
 
         /// @brief Extra options for @ref
-        ///     proto::message::LoadCellResetOffset
+        ///     proto::message::LoadCellCalibrateWithRefWeight
         ///     message.
-        using LoadCellResetOffset = comms::option::app::EmptyOption;
-
-        /// @brief Extra options for @ref
-        ///     proto::message::LoadCellSetRefWeight
-        ///     message.
-        using LoadCellSetRefWeight = comms::option::app::EmptyOption;
+        using LoadCellCalibrateWithRefWeight = comms::option::app::EmptyOption;
 
         /// @brief Extra options for @ref
         ///     proto::message::LoadCellTare message.

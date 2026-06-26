@@ -84,15 +84,10 @@ auto dispatchMessage(
     }
     case 32 /* 0x20 */:
     {
-        using MsgType = proto::message::LoadCellResetOffset<InterfaceType, TProtOptions>;
+        using MsgType = proto::message::LoadCellCalibrateWithRefWeight<InterfaceType, TProtOptions>;
         return handler.handle(static_cast<MsgType&>(msg));
     }
     case 33 /* 0x21 */:
-    {
-        using MsgType = proto::message::LoadCellSetRefWeight<InterfaceType, TProtOptions>;
-        return handler.handle(static_cast<MsgType&>(msg));
-    }
-    case 34 /* 0x22 */:
     {
         using MsgType = proto::message::LoadCellTare<InterfaceType, TProtOptions>;
         return handler.handle(static_cast<MsgType&>(msg));

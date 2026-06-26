@@ -56,7 +56,7 @@ class LoadCellTare : public
     comms::MessageBase<
         TMsgBase,
         typename TOpt::message::LoadCellTare,
-        comms::option::def::StaticNumIdImpl<34 /* 0x22 */>,
+        comms::option::def::StaticNumIdImpl<33 /* 0x21 */>,
         comms::option::def::FieldsImpl<typename LoadCellTareFields<TOpt>::All>,
         comms::option::def::MsgType<LoadCellTare<TMsgBase, TOpt> >,
         comms::option::def::HasName
@@ -67,7 +67,7 @@ class LoadCellTare : public
         comms::MessageBase<
             TMsgBase,
             typename TOpt::message::LoadCellTare,
-            comms::option::def::StaticNumIdImpl<34 /* 0x22 */>,
+            comms::option::def::StaticNumIdImpl<33 /* 0x21 */>,
             comms::option::def::FieldsImpl<typename LoadCellTareFields<TOpt>::All>,
             comms::option::def::MsgType<LoadCellTare<TMsgBase, TOpt> >,
             comms::option::def::HasName

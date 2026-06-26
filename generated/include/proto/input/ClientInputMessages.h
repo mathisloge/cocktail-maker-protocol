@@ -11,8 +11,7 @@
 #include "proto/message/DispenserFillingQuantityRequest.h"
 #include "proto/message/EmergencyStop.h"
 #include "proto/message/HighlightDispenser.h"
-#include "proto/message/LoadCellResetOffset.h"
-#include "proto/message/LoadCellSetRefWeight.h"
+#include "proto/message/LoadCellCalibrateWithRefWeight.h"
 #include "proto/message/LoadCellTare.h"
 #include "proto/message/Ping.h"
 #include "proto/message/PumpStartCalibration.h"
@@ -33,8 +32,7 @@ using ClientInputMessages =
         proto::message::Ping<TBase, TOpt>,
         proto::message::DeviceInfoRequest<TBase, TOpt>,
         proto::message::EmergencyStop<TBase, TOpt>,
-        proto::message::LoadCellResetOffset<TBase, TOpt>,
-        proto::message::LoadCellSetRefWeight<TBase, TOpt>,
+        proto::message::LoadCellCalibrateWithRefWeight<TBase, TOpt>,
         proto::message::LoadCellTare<TBase, TOpt>,
         proto::message::PumpStartCalibration<TBase, TOpt>,
         proto::message::HighlightDispenser<TBase, TOpt>,
@@ -55,8 +53,7 @@ using ClientInputMessages =
     using prefix_ ## Ping ## suffix_ = proto::message::Ping<interface_, opts_>; \
     using prefix_ ## DeviceInfoRequest ## suffix_ = proto::message::DeviceInfoRequest<interface_, opts_>; \
     using prefix_ ## EmergencyStop ## suffix_ = proto::message::EmergencyStop<interface_, opts_>; \
-    using prefix_ ## LoadCellResetOffset ## suffix_ = proto::message::LoadCellResetOffset<interface_, opts_>; \
-    using prefix_ ## LoadCellSetRefWeight ## suffix_ = proto::message::LoadCellSetRefWeight<interface_, opts_>; \
+    using prefix_ ## LoadCellCalibrateWithRefWeight ## suffix_ = proto::message::LoadCellCalibrateWithRefWeight<interface_, opts_>; \
     using prefix_ ## LoadCellTare ## suffix_ = proto::message::LoadCellTare<interface_, opts_>; \
     using prefix_ ## PumpStartCalibration ## suffix_ = proto::message::PumpStartCalibration<interface_, opts_>; \
     using prefix_ ## HighlightDispenser ## suffix_ = proto::message::HighlightDispenser<interface_, opts_>; \

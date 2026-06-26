@@ -68,9 +68,8 @@ public:
             case 1 /* 0x1 */: return MsgPtr(new proto::message::Ping<TInterface, TProtOptions>);
             case 16 /* 0x10 */: return MsgPtr(new proto::message::DeviceInfoRequest<TInterface, TProtOptions>);
             case 18 /* 0x12 */: return MsgPtr(new proto::message::EmergencyStop<TInterface, TProtOptions>);
-            case 32 /* 0x20 */: return MsgPtr(new proto::message::LoadCellResetOffset<TInterface, TProtOptions>);
-            case 33 /* 0x21 */: return MsgPtr(new proto::message::LoadCellSetRefWeight<TInterface, TProtOptions>);
-            case 34 /* 0x22 */: return MsgPtr(new proto::message::LoadCellTare<TInterface, TProtOptions>);
+            case 32 /* 0x20 */: return MsgPtr(new proto::message::LoadCellCalibrateWithRefWeight<TInterface, TProtOptions>);
+            case 33 /* 0x21 */: return MsgPtr(new proto::message::LoadCellTare<TInterface, TProtOptions>);
             case 49 /* 0x31 */: return MsgPtr(new proto::message::PumpStartCalibration<TInterface, TProtOptions>);
             case 64 /* 0x40 */: return MsgPtr(new proto::message::HighlightDispenser<TInterface, TProtOptions>);
             case 65 /* 0x41 */: return MsgPtr(new proto::message::Dispense<TInterface, TProtOptions>);
@@ -108,7 +107,6 @@ public:
             case 18 /* 0x12 */: return 1;
             case 32 /* 0x20 */: return 1;
             case 33 /* 0x21 */: return 1;
-            case 34 /* 0x22 */: return 1;
             case 49 /* 0x31 */: return 1;
             case 64 /* 0x40 */: return 1;
             case 65 /* 0x41 */: return 1;

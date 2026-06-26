@@ -30,7 +30,7 @@ class MsgId : public
         comms::option::def::HasName,
         comms::option::def::ValidNumValueRange<1, 4>,
         comms::option::def::ValidNumValueRange<16, 18>,
-        comms::option::def::ValidNumValueRange<32, 34>,
+        comms::option::def::ValidNumValueRange<32, 33>,
         comms::option::def::ValidNumValueRange<49, 50>,
         comms::option::def::ValidNumValueRange<64, 68>
     >
@@ -43,7 +43,7 @@ class MsgId : public
             comms::option::def::HasName,
             comms::option::def::ValidNumValueRange<1, 4>,
             comms::option::def::ValidNumValueRange<16, 18>,
-            comms::option::def::ValidNumValueRange<32, 34>,
+            comms::option::def::ValidNumValueRange<32, 33>,
             comms::option::def::ValidNumValueRange<49, 50>,
             comms::option::def::ValidNumValueRange<64, 68>
         >;
