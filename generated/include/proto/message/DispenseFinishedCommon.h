@@ -6,11 +6,23 @@
 
 #pragma once
 
+#include "proto/field/MillilitreCommon.h"
+
 namespace proto
 {
 
 namespace message
 {
+
+/// @brief Common types and functions for fields of
+///     @ref proto::message::DispenseFinished message.
+/// @see proto::message::DispenseFinishedFields
+struct DispenseFinishedFieldsCommon
+{
+    /// @brief Common types and functions for
+    ///     @ref proto::message::DispenseFinishedFields::Millilitre field.
+    using MillilitreCommon = proto::field::MillilitreCommon;
+};
 
 /// @brief Common types and functions of
 ///     @ref proto::message::DispenseFinished message.

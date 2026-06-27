@@ -7,6 +7,9 @@
 
 #include <tuple>
 #include "comms/MessageBase.h"
+#include "comms/options.h"
+#include "proto/field/FieldBase.h"
+#include "proto/field/Millilitre.h"
 #include "proto/message/DispenseFinishedCommon.h"
 #include "proto/options/DefaultOptions.h"
 
@@ -23,8 +26,20 @@ namespace message
 template <typename TOpt = proto::options::DefaultOptions>
 struct DispenseFinishedFields
 {
+    /// @brief Definition of <b>"Millilitre"</b> field.
+    /// @details
+    ///     The amount that was dispensed.
+    struct Millilitre: public
+        proto::field::Millilitre<
+            TOpt,
+            comms::option::def::HasName
+        >
+    {
+    };
+
     /// @brief All the fields bundled in std::tuple.
     using All = std::tuple<
+        Millilitre
     >;
 };
 
@@ -58,11 +73,23 @@ class DispenseFinished : public
         >;
 
 public:
+    /// @brief Provide names and allow access to internal fields.
+    /// @details See definition of @b COMMS_MSG_FIELDS_NAMES macro
+    ///     related to @b comms::MessageBase class from COMMS library
+    ///     for details.
+    ///
+    ///     The generated values, types and functions are:
+    ///     @li @b FieldIdx_millilitre index, @b Field_millilitre type and @b field_millilitre() access fuction
+    ///         for @ref DispenseFinishedFields::Millilitre field.
+    COMMS_MSG_FIELDS_NAMES(
+        millilitre
+    );
+
     // Compile time check for serialisation length.
     static const std::size_t MsgMinLen = Base::doMinLength();
     static const std::size_t MsgMaxLen = Base::doMaxLength();
-    static_assert(MsgMinLen == 0, "Unexpected min serialisation length");
-    static_assert(MsgMaxLen == 0, "Unexpected max serialisation length");
+    static_assert(MsgMinLen == 2, "Unexpected min serialisation length");
+    static_assert(MsgMaxLen == 2, "Unexpected max serialisation length");
 
     /// @brief Name of the message.
     static const char* doName()

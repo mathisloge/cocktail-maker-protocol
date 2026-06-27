@@ -255,6 +255,7 @@
             The dispense action has been finished.
         </description>
         <fields>
+            <ref field="Millilitre" description="The amount that was dispensed." />
         </fields>
     </message>
 
