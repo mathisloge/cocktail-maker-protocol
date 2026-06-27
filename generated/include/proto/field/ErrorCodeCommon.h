@@ -31,11 +31,12 @@ struct ErrorCodeCommon
         Busy = 4, ///< value <b>Busy</b>.
         NotCalibrated = 5, ///< value <b>Not Calibrated</b>.
         InternalError = 6, ///< value <b>Internal Error</b>.
+        DispenserEmpty = 7, ///< value <b>Dispenser Empty</b>.
 
         // --- Extra values generated for convenience ---
         FirstValue = 0, ///< First defined value.
-        LastValue = 6, ///< Last defined value.
-        ValuesLimit = 7, ///< Upper limit for defined values.
+        LastValue = 7, ///< Last defined value.
+        ValuesLimit = 8, ///< Upper limit for defined values.
     };
 
     /// @brief Single value name info entry
@@ -73,7 +74,8 @@ struct ErrorCodeCommon
             "Hardware Fault",
             "Busy",
             "Not Calibrated",
-            "Internal Error"
+            "Internal Error",
+            "Dispenser Empty"
         };
         static const std::size_t MapSize = std::extent<decltype(Map)>::value;
 

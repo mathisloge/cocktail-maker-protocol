@@ -81,6 +81,7 @@
             <validValue name="Busy" val="4" displayName="Busy" />
             <validValue name="NotCalibrated" val="5" displayName="Not Calibrated" />
             <validValue name="InternalError" val="6" displayName="Internal Error" />
+            <validValue name="DispenserEmpty" val="7" displayName="Dispenser Empty" />
         </enum>
         <int name="DispenserId" type="uint8" />
         <int name="Millilitre" type="int16" />

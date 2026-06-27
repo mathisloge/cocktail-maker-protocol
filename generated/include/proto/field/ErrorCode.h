@@ -28,7 +28,7 @@ class ErrorCode : public
         proto::field::ErrorCodeCommon::ValueType,
         TExtraOpts...,
         comms::option::def::HasName,
-        comms::option::def::ValidNumValueRange<0, 6>
+        comms::option::def::ValidNumValueRange<0, 7>
     >
 {
     using Base =
@@ -37,7 +37,7 @@ class ErrorCode : public
             proto::field::ErrorCodeCommon::ValueType,
             TExtraOpts...,
             comms::option::def::HasName,
-            comms::option::def::ValidNumValueRange<0, 6>
+            comms::option::def::ValidNumValueRange<0, 7>
         >;
 public:
     /// @brief Re-definition of the value type.
