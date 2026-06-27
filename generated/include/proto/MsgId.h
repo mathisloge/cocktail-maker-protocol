@@ -28,13 +28,11 @@ enum MsgId : std::uint16_t
     MsgId_HighlightDispenser = 64, ///< message id of <b>Highlight Dispenser</b> message.
     MsgId_Dispense = 65, ///< message id of <b>Dispense</b> message.
     MsgId_DispenseFinished = 66, ///< message id of <b>Dispense Finished</b> message.
-    MsgId_DispenserFillingQuantityRequest = 67, ///< message id of <b>Dispenser Filling Quantity Request</b> message.
-    MsgId_DispenserFillingQuantityResponse = 68, ///< message id of <b>Dispenser Filling Quantity Response</b> message.
 
     // --- Extra values generated for convenience ---
     MsgId_FirstValue = 1, ///< First defined value.
-    MsgId_LastValue = 68, ///< Last defined value.
-    MsgId_ValuesLimit = 69, ///< Upper limit for defined values.
+    MsgId_LastValue = 66, ///< Last defined value.
+    MsgId_ValuesLimit = 67, ///< Upper limit for defined values.
 };
 
 } // namespace proto

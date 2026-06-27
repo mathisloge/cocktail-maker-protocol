@@ -117,16 +117,6 @@ auto dispatchMessage(
         using MsgType = proto::message::DispenseFinished<InterfaceType, TProtOptions>;
         return handler.handle(static_cast<MsgType&>(msg));
     }
-    case 67 /* 0x43 */:
-    {
-        using MsgType = proto::message::DispenserFillingQuantityRequest<InterfaceType, TProtOptions>;
-        return handler.handle(static_cast<MsgType&>(msg));
-    }
-    case 68 /* 0x44 */:
-    {
-        using MsgType = proto::message::DispenserFillingQuantityResponse<InterfaceType, TProtOptions>;
-        return handler.handle(static_cast<MsgType&>(msg));
-    }
     default:
         break;
     };

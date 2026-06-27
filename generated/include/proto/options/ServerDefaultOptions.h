@@ -69,26 +69,6 @@ struct ServerDefaultOptionsT : public TBase
             >;
 
         /// @brief Extra options for @ref
-        ///     proto::message::DispenserFillingQuantityRequest
-        ///     message.
-        using DispenserFillingQuantityRequest =
-            std::tuple<
-                comms::option::app::NoReadImpl,
-                comms::option::app::NoDispatchImpl,
-                typename TBase::message::DispenserFillingQuantityRequest
-            >;
-
-        /// @brief Extra options for @ref
-        ///     proto::message::DispenserFillingQuantityResponse
-        ///     message.
-        using DispenserFillingQuantityResponse =
-            std::tuple<
-                comms::option::app::NoWriteImpl,
-                comms::option::app::NoRefreshImpl,
-                typename TBase::message::DispenserFillingQuantityResponse
-            >;
-
-        /// @brief Extra options for @ref
         ///     proto::message::EmergencyStop message.
         using EmergencyStop =
             std::tuple<

@@ -11,8 +11,6 @@
 #include "proto/message/DeviceInfoResponse.h"
 #include "proto/message/Dispense.h"
 #include "proto/message/DispenseFinished.h"
-#include "proto/message/DispenserFillingQuantityRequest.h"
-#include "proto/message/DispenserFillingQuantityResponse.h"
 #include "proto/message/EmergencyStop.h"
 #include "proto/message/HighlightDispenser.h"
 #include "proto/message/LoadCellCalibrateWithRefWeight.h"
@@ -49,9 +47,7 @@ using AllMessages =
         proto::message::PumpFinishedCalibrationResponse<TBase, TOpt>,
         proto::message::HighlightDispenser<TBase, TOpt>,
         proto::message::Dispense<TBase, TOpt>,
-        proto::message::DispenseFinished<TBase, TOpt>,
-        proto::message::DispenserFillingQuantityRequest<TBase, TOpt>,
-        proto::message::DispenserFillingQuantityResponse<TBase, TOpt>
+        proto::message::DispenseFinished<TBase, TOpt>
     >;
 
 } // namespace input
@@ -77,9 +73,7 @@ using AllMessages =
     using prefix_ ## PumpFinishedCalibrationResponse ## suffix_ = proto::message::PumpFinishedCalibrationResponse<interface_, opts_>; \
     using prefix_ ## HighlightDispenser ## suffix_ = proto::message::HighlightDispenser<interface_, opts_>; \
     using prefix_ ## Dispense ## suffix_ = proto::message::Dispense<interface_, opts_>; \
-    using prefix_ ## DispenseFinished ## suffix_ = proto::message::DispenseFinished<interface_, opts_>; \
-    using prefix_ ## DispenserFillingQuantityRequest ## suffix_ = proto::message::DispenserFillingQuantityRequest<interface_, opts_>; \
-    using prefix_ ## DispenserFillingQuantityResponse ## suffix_ = proto::message::DispenserFillingQuantityResponse<interface_, opts_>;
+    using prefix_ ## DispenseFinished ## suffix_ = proto::message::DispenseFinished<interface_, opts_>;
 
 /// @brief Create type aliases for the all messages of the protocol using default options.
 /// @param prefix_ Prefix of the alias message type.

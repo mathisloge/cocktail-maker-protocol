@@ -8,7 +8,6 @@
 #include <tuple>
 #include "proto/message/DeviceInfoRequest.h"
 #include "proto/message/Dispense.h"
-#include "proto/message/DispenserFillingQuantityRequest.h"
 #include "proto/message/EmergencyStop.h"
 #include "proto/message/HighlightDispenser.h"
 #include "proto/message/LoadCellCalibrateWithRefWeight.h"
@@ -36,8 +35,7 @@ using ClientInputMessages =
         proto::message::LoadCellTare<TBase, TOpt>,
         proto::message::PumpStartCalibration<TBase, TOpt>,
         proto::message::HighlightDispenser<TBase, TOpt>,
-        proto::message::Dispense<TBase, TOpt>,
-        proto::message::DispenserFillingQuantityRequest<TBase, TOpt>
+        proto::message::Dispense<TBase, TOpt>
     >;
 
 } // namespace input
@@ -57,8 +55,7 @@ using ClientInputMessages =
     using prefix_ ## LoadCellTare ## suffix_ = proto::message::LoadCellTare<interface_, opts_>; \
     using prefix_ ## PumpStartCalibration ## suffix_ = proto::message::PumpStartCalibration<interface_, opts_>; \
     using prefix_ ## HighlightDispenser ## suffix_ = proto::message::HighlightDispenser<interface_, opts_>; \
-    using prefix_ ## Dispense ## suffix_ = proto::message::Dispense<interface_, opts_>; \
-    using prefix_ ## DispenserFillingQuantityRequest ## suffix_ = proto::message::DispenserFillingQuantityRequest<interface_, opts_>;
+    using prefix_ ## Dispense ## suffix_ = proto::message::Dispense<interface_, opts_>;
 
 /// @brief Create type aliases for the client input messages of the protocol using default options.
 /// @param prefix_ Prefix of the alias message type.

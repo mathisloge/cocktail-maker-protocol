@@ -79,8 +79,6 @@ public:
             case 64 /* 0x40 */: return MsgPtr(new proto::message::HighlightDispenser<TInterface, TProtOptions>);
             case 65 /* 0x41 */: return MsgPtr(new proto::message::Dispense<TInterface, TProtOptions>);
             case 66 /* 0x42 */: return MsgPtr(new proto::message::DispenseFinished<TInterface, TProtOptions>);
-            case 67 /* 0x43 */: return MsgPtr(new proto::message::DispenserFillingQuantityRequest<TInterface, TProtOptions>);
-            case 68 /* 0x44 */: return MsgPtr(new proto::message::DispenserFillingQuantityResponse<TInterface, TProtOptions>);
             default: break;
         }
 
@@ -123,8 +121,6 @@ public:
             case 64 /* 0x40 */: return 1;
             case 65 /* 0x41 */: return 1;
             case 66 /* 0x42 */: return 1;
-            case 67 /* 0x43 */: return 1;
-            case 68 /* 0x44 */: return 1;
             default: break;
         }
 

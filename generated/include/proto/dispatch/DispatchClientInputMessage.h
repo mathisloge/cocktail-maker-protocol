@@ -87,11 +87,6 @@ auto dispatchClientInputMessage(
         using MsgType = proto::message::Dispense<InterfaceType, TProtOptions>;
         return handler.handle(static_cast<MsgType&>(msg));
     }
-    case 67 /* 0x43 */:
-    {
-        using MsgType = proto::message::DispenserFillingQuantityRequest<InterfaceType, TProtOptions>;
-        return handler.handle(static_cast<MsgType&>(msg));
-    }
     default:
         break;
     };

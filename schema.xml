@@ -33,10 +33,6 @@
         <string name="MsgHighlightDispenserName" defaultValue="Highlight Dispenser" />
         <string name="MsgDispenseName" defaultValue="Dispense" />
         <string name="MsgDispenseFinishedName" defaultValue="Dispense Finished" />
-        <string name="MsgDispenserFillingQuantityRequestName"
-            defaultValue="Dispenser Filling Quantity Request" />
-        <string name="MsgDispenserFillingQuantityResponseName"
-            defaultValue="Dispenser Filling Quantity Response" />
 
         <enum name="MsgId" type="uint16" semanticType="messageId">
             <!-- General messages -->
@@ -66,10 +62,6 @@
                 displayName="^MsgHighlightDispenserName" />
             <validValue name="Dispense" val="0x041" displayName="^MsgDispenseName" />
             <validValue name="DispenseFinished" val="0x042" displayName="^MsgDispenseFinishedName" />
-            <validValue name="DispenserFillingQuantityRequest" val="0x043"
-                displayName="^MsgDispenserFillingQuantityRequestName" />
-            <validValue name="DispenserFillingQuantityResponse" val="0x044"
-                displayName="^MsgDispenserFillingQuantityResponseName" />
         </enum>
 
         <enum name="ErrorCode" type="uint8">
@@ -256,29 +248,6 @@
         </description>
         <fields>
             <ref field="Millilitre" description="The amount that was dispensed." />
-        </fields>
-    </message>
-
-    <message name="DispenserFillingQuantityRequest" id="MsgId.DispenserFillingQuantityRequest"
-        sender="server"
-        displayName="^MsgDispenserFillingQuantityRequestName">
-        <description>
-            Request the current filling quantity of a dispenser.
-        </description>
-        <fields>
-            <ref field="DispenserId" />
-        </fields>
-    </message>
-
-    <message name="DispenserFillingQuantityResponse" id="MsgId.DispenserFillingQuantityResponse"
-        sender="client"
-        displayName="^MsgDispenserFillingQuantityResponseName">
-        <description>
-            The response to DispenserFillingQuantityRequest.
-            Reports the filling level of a dispenser.
-        </description>
-        <fields>
-            <ref field="Millilitre" description="The measured remaining volume." />
         </fields>
     </message>
 

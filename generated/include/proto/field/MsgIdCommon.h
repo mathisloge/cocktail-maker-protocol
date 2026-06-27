@@ -78,9 +78,7 @@ struct MsgIdCommon
             std::make_pair(proto::MsgId_PumpFinishedCalibrationResponse, "Pump Finished Calibration Response"),
             std::make_pair(proto::MsgId_HighlightDispenser, "Highlight Dispenser"),
             std::make_pair(proto::MsgId_Dispense, "Dispense"),
-            std::make_pair(proto::MsgId_DispenseFinished, "Dispense Finished"),
-            std::make_pair(proto::MsgId_DispenserFillingQuantityRequest, "Dispenser Filling Quantity Request"),
-            std::make_pair(proto::MsgId_DispenserFillingQuantityResponse, "Dispenser Filling Quantity Response")
+            std::make_pair(proto::MsgId_DispenseFinished, "Dispense Finished")
         };
         static const std::size_t MapSize = std::extent<decltype(Map)>::value;
 
