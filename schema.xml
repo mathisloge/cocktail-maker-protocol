@@ -78,7 +78,7 @@
         <int name="DispenserId" type="uint8" />
         <int name="Millilitre" type="int16" />
         <int name="Gram" type="int16" />
-        <int name="PumpStep" type="uint16" />
+        <int name="PumpStep" type="uint64" />
         <int name="Milliseconds" type="int16" units="milliseconds" />
 
         <enum name="LedEffect" type="uint8">
