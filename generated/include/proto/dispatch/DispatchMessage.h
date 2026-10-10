@@ -166,7 +166,7 @@ auto dispatchMessageDefaultOptions(
 }
 
 /// @brief Dispatch message object to its appropriate handling function.
-/// @details Same as other dispatchMessageDefaultOptions(),
+/// @details Same as other dispatchMessageDefaultOptions(), 
 ///     but receives extra @b idx parameter.
 /// @param[in] id Numeric message ID.
 /// @param[in] idx Index of the message among messages with the same ID.

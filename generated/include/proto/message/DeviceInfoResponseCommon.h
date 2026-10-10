@@ -14,7 +14,7 @@ namespace proto
 namespace message
 {
 
-/// @brief Common types and functions for fields of
+/// @brief Common types and functions for fields of 
 ///     @ref proto::message::DeviceInfoResponse message.
 /// @see proto::message::DeviceInfoResponseFields
 struct DeviceInfoResponseFieldsCommon
@@ -183,7 +183,7 @@ struct DeviceInfoResponseFieldsCommon
     };
 };
 
-/// @brief Common types and functions of
+/// @brief Common types and functions of 
 ///     @ref proto::message::DeviceInfoResponse message.
 struct DeviceInfoResponseCommon
 {

@@ -25,7 +25,7 @@ template <typename TOpt = proto::options::DefaultOptions, typename... TExtraOpts
 class PumpStep : public
     comms::field::IntValue<
         proto::field::FieldBase<>,
-        std::uint16_t,
+        std::uint64_t,
         TExtraOpts...,
         comms::option::def::HasName
     >
@@ -33,7 +33,7 @@ class PumpStep : public
     using Base =
         comms::field::IntValue<
             proto::field::FieldBase<>,
-            std::uint16_t,
+            std::uint64_t,
             TExtraOpts...,
             comms::option::def::HasName
         >;

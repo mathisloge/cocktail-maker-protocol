@@ -24,9 +24,9 @@ struct LedEffectCommon
     ///     @ref proto::field::LedEffect field.
     enum class ValueType : std::uint8_t
     {
-        Off = 0, ///< value @b Off.
-        Highlight = 1, ///< value @b Highlight.
-        Warn = 2, ///< value @b Warn.
+        Off = 0, ///< value @b Off. 
+        Highlight = 1, ///< value @b Highlight. 
+        Warn = 2, ///< value @b Warn. 
 
         // --- Extra values generated for convenience ---
         FirstValue = 0, ///< First defined value.

@@ -49,7 +49,7 @@
 /// @li @ref proto::input::ClientInputMessages (from @b proto/input/ClientInputMessages.h header file).
 ///
 /// @section main_dispatch Dispatching Message Objects
-/// While the @b COMMS library provides various built-in ways of
+/// While the @b COMMS library provides various built-in ways of 
 /// dispatching message objects into their respective handlers
 /// (see <b>Advanced Guide to Message Dispatching</b> page of the
 /// @b COMMS library documentation), the generated code also provides

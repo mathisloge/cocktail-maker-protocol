@@ -14,7 +14,7 @@ namespace proto
 namespace message
 {
 
-/// @brief Common types and functions for fields of
+/// @brief Common types and functions for fields of 
 ///     @ref proto::message::Nak message.
 /// @see proto::message::NakFields
 struct NakFieldsCommon
@@ -24,7 +24,7 @@ struct NakFieldsCommon
     using ErrorCodeCommon = proto::field::ErrorCodeCommon;
 };
 
-/// @brief Common types and functions of
+/// @brief Common types and functions of 
 ///     @ref proto::message::Nak message.
 struct NakCommon
 {

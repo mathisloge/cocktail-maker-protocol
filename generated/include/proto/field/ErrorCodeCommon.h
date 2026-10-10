@@ -24,14 +24,14 @@ struct ErrorCodeCommon
     ///     @ref proto::field::ErrorCode field.
     enum class ValueType : std::uint8_t
     {
-        InvalidParameter = 0, ///< value <b>Invalid Parameter</b>.
-        DispenserNotFound = 1, ///< value <b>Dispenser Not Found</b>.
-        UnsupportedInCurrentState = 2, ///< value <b>Unsupported In Current State</b>.
-        HardwareFault = 3, ///< value <b>Hardware Fault</b>.
-        Busy = 4, ///< value <b>Busy</b>.
-        NotCalibrated = 5, ///< value <b>Not Calibrated</b>.
-        InternalError = 6, ///< value <b>Internal Error</b>.
-        DispenserEmpty = 7, ///< value <b>Dispenser Empty</b>.
+        InvalidParameter = 0, ///< value <b>Invalid Parameter</b>. 
+        DispenserNotFound = 1, ///< value <b>Dispenser Not Found</b>. 
+        UnsupportedInCurrentState = 2, ///< value <b>Unsupported In Current State</b>. 
+        HardwareFault = 3, ///< value <b>Hardware Fault</b>. 
+        Busy = 4, ///< value <b>Busy</b>. 
+        NotCalibrated = 5, ///< value <b>Not Calibrated</b>. 
+        InternalError = 6, ///< value <b>Internal Error</b>. 
+        DispenserEmpty = 7, ///< value <b>Dispenser Empty</b>. 
 
         // --- Extra values generated for convenience ---
         FirstValue = 0, ///< First defined value.

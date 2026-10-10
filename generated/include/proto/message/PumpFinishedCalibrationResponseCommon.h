@@ -15,7 +15,7 @@ namespace proto
 namespace message
 {
 
-/// @brief Common types and functions for fields of
+/// @brief Common types and functions for fields of 
 ///     @ref proto::message::PumpFinishedCalibrationResponse message.
 /// @see proto::message::PumpFinishedCalibrationResponseFields
 struct PumpFinishedCalibrationResponseFieldsCommon
@@ -29,7 +29,7 @@ struct PumpFinishedCalibrationResponseFieldsCommon
     using MillilitreCommon = proto::field::MillilitreCommon;
 };
 
-/// @brief Common types and functions of
+/// @brief Common types and functions of 
 ///     @ref proto::message::PumpFinishedCalibrationResponse message.
 struct PumpFinishedCalibrationResponseCommon
 {

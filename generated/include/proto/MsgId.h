@@ -14,20 +14,20 @@ namespace proto
 /// @brief Message ids enumeration.
 enum MsgId : std::uint16_t
 {
-    MsgId_Ping = 1, ///< message id of <b>Ping Server Message</b> message.
-    MsgId_Pong = 2, ///< message id of <b>Pong Client Message</b> message.
-    MsgId_Ack = 3, ///< message id of <b>Ack</b> message.
-    MsgId_Nak = 4, ///< message id of <b>Nak</b> message.
-    MsgId_DeviceInfoRequest = 16, ///< message id of <b>Device Info Request</b> message.
-    MsgId_DeviceInfoResponse = 17, ///< message id of <b>Device Info Response</b> message.
-    MsgId_EmergencyStop = 18, ///< message id of <b>Emergency Stop</b> message.
-    MsgId_LoadCellCalibrateWithRefWeight = 32, ///< message id of <b>LoadCell Calibrate With Ref Weight</b> message.
-    MsgId_LoadCellTare = 33, ///< message id of <b>LoadCell Tare</b> message.
-    MsgId_PumpStartCalibration = 49, ///< message id of <b>Pump Start Calibration</b> message.
-    MsgId_PumpFinishedCalibrationResponse = 50, ///< message id of <b>Pump Finished Calibration Response</b> message.
-    MsgId_HighlightDispenser = 64, ///< message id of <b>Highlight Dispenser</b> message.
-    MsgId_Dispense = 65, ///< message id of <b>Dispense</b> message.
-    MsgId_DispenseFinished = 66, ///< message id of <b>Dispense Finished</b> message.
+    MsgId_Ping = 1, ///< message id of <b>Ping Server Message</b> message. 
+    MsgId_Pong = 2, ///< message id of <b>Pong Client Message</b> message. 
+    MsgId_Ack = 3, ///< message id of <b>Ack</b> message. 
+    MsgId_Nak = 4, ///< message id of <b>Nak</b> message. 
+    MsgId_DeviceInfoRequest = 16, ///< message id of <b>Device Info Request</b> message. 
+    MsgId_DeviceInfoResponse = 17, ///< message id of <b>Device Info Response</b> message. 
+    MsgId_EmergencyStop = 18, ///< message id of <b>Emergency Stop</b> message. 
+    MsgId_LoadCellCalibrateWithRefWeight = 32, ///< message id of <b>LoadCell Calibrate With Ref Weight</b> message. 
+    MsgId_LoadCellTare = 33, ///< message id of <b>LoadCell Tare</b> message. 
+    MsgId_PumpStartCalibration = 49, ///< message id of <b>Pump Start Calibration</b> message. 
+    MsgId_PumpFinishedCalibrationResponse = 50, ///< message id of <b>Pump Finished Calibration Response</b> message. 
+    MsgId_HighlightDispenser = 64, ///< message id of <b>Highlight Dispenser</b> message. 
+    MsgId_Dispense = 65, ///< message id of <b>Dispense</b> message. 
+    MsgId_DispenseFinished = 66, ///< message id of <b>Dispense Finished</b> message. 
 
     // --- Extra values generated for convenience ---
     MsgId_FirstValue = 1, ///< First defined value.

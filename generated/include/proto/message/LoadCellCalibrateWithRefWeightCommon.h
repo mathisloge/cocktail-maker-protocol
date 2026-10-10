@@ -15,7 +15,7 @@ namespace proto
 namespace message
 {
 
-/// @brief Common types and functions for fields of
+/// @brief Common types and functions for fields of 
 ///     @ref proto::message::LoadCellCalibrateWithRefWeight message.
 /// @see proto::message::LoadCellCalibrateWithRefWeightFields
 struct LoadCellCalibrateWithRefWeightFieldsCommon
@@ -29,7 +29,7 @@ struct LoadCellCalibrateWithRefWeightFieldsCommon
     using GramCommon = proto::field::GramCommon;
 };
 
-/// @brief Common types and functions of
+/// @brief Common types and functions of 
 ///     @ref proto::message::LoadCellCalibrateWithRefWeight message.
 struct LoadCellCalibrateWithRefWeightCommon
 {

@@ -20,7 +20,7 @@ struct PumpStepCommon
 {
     /// @brief Re-definition of the value type used by
     ///     proto::field::PumpStep field.
-    using ValueType = std::uint16_t;
+    using ValueType = std::uint64_t;
 
     /// @brief Name of the @ref proto::field::PumpStep field.
     static const char* name()

@@ -20,7 +20,7 @@ struct MillilitreCommon
 {
     /// @brief Re-definition of the value type used by
     ///     proto::field::Millilitre field.
-    using ValueType = std::int16_t;
+    using ValueType = std::int32_t;
 
     /// @brief Name of the @ref proto::field::Millilitre field.
     static const char* name()

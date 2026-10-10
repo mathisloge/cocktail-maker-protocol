@@ -12,7 +12,7 @@ namespace proto
 namespace message
 {
 
-/// @brief Common types and functions of
+/// @brief Common types and functions of 
 ///     @ref proto::message::EmergencyStop message.
 struct EmergencyStopCommon
 {

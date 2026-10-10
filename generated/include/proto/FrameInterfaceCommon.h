@@ -11,7 +11,7 @@
 namespace proto
 {
 
-/// @brief Common types and functions for fields of
+/// @brief Common types and functions for fields of 
 ///     @ref proto::FrameInterface interface.
 /// @see proto::FrameInterfaceFields
 struct FrameInterfaceFieldsCommon

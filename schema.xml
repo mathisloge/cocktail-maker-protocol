@@ -76,10 +76,10 @@
             <validValue name="DispenserEmpty" val="7" displayName="Dispenser Empty" />
         </enum>
         <int name="DispenserId" type="uint8" />
-        <int name="Millilitre" type="int16" />
-        <int name="Gram" type="int16" />
+        <int name="Millilitre" type="int32" />
+        <int name="Gram" type="int32" />
         <int name="PumpStep" type="uint64" />
-        <int name="Milliseconds" type="int16" units="milliseconds" />
+        <int name="Milliseconds" type="int32" units="milliseconds" />
 
         <enum name="LedEffect" type="uint8">
             <validValue name="Off" val="0" />

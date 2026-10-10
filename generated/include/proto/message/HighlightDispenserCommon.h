@@ -16,7 +16,7 @@ namespace proto
 namespace message
 {
 
-/// @brief Common types and functions for fields of
+/// @brief Common types and functions for fields of 
 ///     @ref proto::message::HighlightDispenser message.
 /// @see proto::message::HighlightDispenserFields
 struct HighlightDispenserFieldsCommon
@@ -34,7 +34,7 @@ struct HighlightDispenserFieldsCommon
     using MillisecondsCommon = proto::field::MillisecondsCommon;
 };
 
-/// @brief Common types and functions of
+/// @brief Common types and functions of 
 ///     @ref proto::message::HighlightDispenser message.
 struct HighlightDispenserCommon
 {

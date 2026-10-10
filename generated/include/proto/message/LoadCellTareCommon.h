@@ -14,7 +14,7 @@ namespace proto
 namespace message
 {
 
-/// @brief Common types and functions for fields of
+/// @brief Common types and functions for fields of 
 ///     @ref proto::message::LoadCellTare message.
 /// @see proto::message::LoadCellTareFields
 struct LoadCellTareFieldsCommon
@@ -24,7 +24,7 @@ struct LoadCellTareFieldsCommon
     using DispenserIdCommon = proto::field::DispenserIdCommon;
 };
 
-/// @brief Common types and functions of
+/// @brief Common types and functions of 
 ///     @ref proto::message::LoadCellTare message.
 struct LoadCellTareCommon
 {

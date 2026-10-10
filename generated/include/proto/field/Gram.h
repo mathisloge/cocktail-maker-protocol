@@ -25,7 +25,7 @@ template <typename TOpt = proto::options::DefaultOptions, typename... TExtraOpts
 class Gram : public
     comms::field::IntValue<
         proto::field::FieldBase<>,
-        std::int16_t,
+        std::int32_t,
         TExtraOpts...,
         comms::option::def::HasName
     >
@@ -33,7 +33,7 @@ class Gram : public
     using Base =
         comms::field::IntValue<
             proto::field::FieldBase<>,
-            std::int16_t,
+            std::int32_t,
             TExtraOpts...,
             comms::option::def::HasName
         >;

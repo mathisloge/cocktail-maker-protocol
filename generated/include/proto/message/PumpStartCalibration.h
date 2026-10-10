@@ -103,8 +103,8 @@ public:
     // Compile time check for serialisation length.
     static const std::size_t MsgMinLen = Base::doMinLength();
     static const std::size_t MsgMaxLen = Base::doMaxLength();
-    static_assert(MsgMinLen == 3, "Unexpected min serialisation length");
-    static_assert(MsgMaxLen == 3, "Unexpected max serialisation length");
+    static_assert(MsgMinLen == 9, "Unexpected min serialisation length");
+    static_assert(MsgMaxLen == 9, "Unexpected max serialisation length");
 
     /// @brief Name of the message.
     static const char* doName()
